@@ -1,3 +1,5 @@
+package Parcel;
+
 /**
  In the following questions, you will write a parent class that describes a
  parcel (like a package, as shown below) and a child class that describes an
@@ -41,7 +43,7 @@
 
 public class Parcel {
 
-    static final double DEFAULT_WEIGHT = 1
+    static final double DEFAULT_WEIGHT = 1;
 
     private String id;
     private double weight;
@@ -90,25 +92,5 @@ public class Parcel {
 
     public String toString() {
         return "The parcel's id is: " + getId() + ".\nThe parcel's weight is: " + getWeight() + " pounds.";
-    }
-}
-
-
-
-
-
-
-public class OvernightParcel extends Parcel {
-
-    private boolean signatureRequired;
-
-    public OvernightParcel (String newId, double newWeight, boolean doesNeedSignature) {
-        super(newId, newWeight);
-        doesNeedSignature = setSignatureRequired(doesNeedSignature);
-    }
-
-
-    public void setSignatureRequired(boolean doesNeedSignature) {
-        signatureRequired = doesNeedSignature;
     }
 }
