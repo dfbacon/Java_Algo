@@ -1,4 +1,9 @@
-package Parcel;
+/**
+ Write the follow for the child overnight parcel class:
+     the child class header
+    the instance data variables
+    one constructor that takes in all three pieces of information that describe an overnight parcel
+ */
 
 public class OvernightParcel extends Parcel {
 

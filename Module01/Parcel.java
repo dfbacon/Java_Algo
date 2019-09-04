@@ -14,9 +14,6 @@
  Questions:
 
 
- Override the equals method inherited from object. Two parcels are the same (logically equivalent) if they have the
- same id (ignoring capitalization).
-
  Sometimes an id can contain characters that represent some information.
 
  Write a method to determine whether a Parcel's id meets some criteria. The criteria is described by three pieces of
@@ -28,13 +25,6 @@
     Create two parcel objects. Use both constructors.
     Invoke the method you wrote above on the first object using 'x', 'm', and 2 as parameters; store the returned result in a local variable.
     Print a text representation of the second object to the console.
-
- Write the follow for the child overnight parcel class:
-    the child class header
-    the instance data variables
-    one constructor that takes in all three pieces of information that describe an overnight parcel
-
-
  */
 
 public class Parcel {
@@ -84,7 +74,7 @@ public class Parcel {
 
 
     public void setId(String newId) {
-        id = newId;
+        id = newId.toLowerCase();
     }
 
 
@@ -97,4 +87,22 @@ public class Parcel {
         return getId() == otherParcel.getId();
     }
 
+
+    public boolean IdMeetsCriteria(char first, char second, int numberTimesSecond) {
+        String searchId = getId();
+        int characterCount = 0;
+
+        if (searchId.contains(Character.toString(first)) &&
+                searchId.contains(Character.toString(second))) {
+
+            for (int index = searchId.indexOf(first); index < searchId.length(); index++)
+                if (searchId.charAt(index) == second)
+                    characterCount++;
+
+            if (characterCount == numberTimesSecond)
+                return true;
+        }
+
+        return false;
+    }
 }
