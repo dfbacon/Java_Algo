@@ -1,5 +1,3 @@
-package Parcel;
-
 /**
  In the following questions, you will write a parent class that describes a
  parcel (like a package, as shown below) and a child class that describes an
@@ -48,17 +46,15 @@ public class Parcel {
     private String id;
     private double weight;
 
+    public Parcel(String newId, double newWeight) {
+        setId(newId);
+        setWeight(newWeight);
+    }
+
 
     public Parcel(String newId) {
-        Parcel(newId, DEFAULT_WEIGHT);
+        new Parcel(newId, DEFAULT_WEIGHT);
     }
-
-
-    public Parcel(String newId, double newWeight) {
-        id = setId(newId);
-        weight = setWeight(newWeight);
-    }
-
 
     public double getWeight() {
         return weight;
@@ -75,8 +71,12 @@ public class Parcel {
             if (newWeight > 0)
                 weight = newWeight;
 
-            else
-                throw new IllegalArgumentException("Parcel weight must be greater than zero.");
+            else {
+                weight = DEFAULT_WEIGHT;
+
+                throw new IllegalArgumentException("Parcel weight must be greater than zero. " +
+                        "Setting to default weight.");
+            }
         }
 
         catch (IllegalArgumentException e) {
