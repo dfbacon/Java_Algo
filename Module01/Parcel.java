@@ -14,8 +14,6 @@
  Questions:
 
 
- Write a toString method. The text representation of a parcel should include the id and weight.
-
  Override the equals method inherited from object. Two parcels are the same (logically equivalent) if they have the
  same id (ignoring capitalization).
 
@@ -93,4 +91,10 @@ public class Parcel {
     public String toString() {
         return "The parcel's id is: " + getId() + ".\nThe parcel's weight is: " + getWeight() + " pounds.";
     }
+
+
+    public boolean equals(Parcel otherParcel) {
+        return getId() == otherParcel.getId();
+    }
+
 }
