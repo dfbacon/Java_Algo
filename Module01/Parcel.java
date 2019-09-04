@@ -34,15 +34,17 @@ public class Parcel {
     private String id;
     private double weight;
 
+
+    public Parcel(String newId) {
+        this(newId, DEFAULT_WEIGHT);
+    }
+
+
     public Parcel(String newId, double newWeight) {
         setId(newId);
         setWeight(newWeight);
     }
 
-
-    public Parcel(String newId) {
-        new Parcel(newId, DEFAULT_WEIGHT);
-    }
 
     public double getWeight() {
         return weight;

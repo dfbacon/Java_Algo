@@ -39,10 +39,10 @@ public class ParcelTester {
         else
             System.out.println("No.");
 
-//        if (fifthParcel.IdMeetsCriteria('x', 'm', 2))
-//            System.out.println("Yes.");
-//        else
-//            System.out.println("No.");
+        if (fifthParcel.IdMeetsCriteria('x', 'm', 2))
+            System.out.println("Yes.");
+        else
+            System.out.println("No.");
 
         if (sixthParcel.IdMeetsCriteria('x', 'm', 2))
             System.out.println("Yes.");
