@@ -51,7 +51,7 @@ public class Trio<T> {
     }
 
     public Trio(T item) {
-        this.Trio(item, item, item);
+        this(item, item, item);
     }
 
     public T getItem1() {
