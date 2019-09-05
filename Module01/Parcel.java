@@ -11,15 +11,6 @@
 
  whether or not a signature is required upon delivery.
 
- Questions:
-
-
- Sometimes an id can contain characters that represent some information.
-
- Write a method to determine whether a Parcel's id meets some criteria. The criteria is described by three pieces of
- data, passed in as parameters: char first, char second, int numberTimesSecond. In order for a parcel's id to meet the
- criteria, the id must contain the first character and then the second character must appear that number of times after
- the first character.
 
  Write code that would go inside the main method of a driver/tester program.
     Create two parcel objects. Use both constructors.
