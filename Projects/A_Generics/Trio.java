@@ -1,24 +1,7 @@
 /**
- A Trio is a class representing a data structure that holds a group of three items. A Trio object has the following
- characteristics:
-
-    Trios hold three items of the same type.
-        For example, a Trio could hold three Integers or it could hold three Strings or it could hold three Students,
-        etc. A Trio could not, however, hold two Integers and a String.
-    A Trio can contain duplicates.
-    A Trio's items are unordered.
-    The order doesn't matter. (This is like a set in mathematics. A Trio is different from a set, however, because a
-     Trio can contain duplicates.)
-        For example, the Trio (3, 4, 5) is considered the same as the Trio (4, 5, 3) and the Trio ("hi", "bye",
-         "hello") is considered the same as the Trio ("hello", "hi", "bye").
-
- -----------------------------------------------------------------------------------------------------------------------
  Your class must compile, use generics, and have the following:
 
- (10 points) instance data variables to store the three items contained in the Trio
-
  (10 points) two constructors:
-    one constructor takes in the three items as parameters
     a second constructor takes in a single item and the Trio will then consist of three of these items
     for full credit, reduce duplicated code in the constructors and follow best practices for overloading constructors.
 
@@ -44,4 +27,61 @@
 
  (10 points) Style: Your class should follow Java coding conventions and best practices. Follow naming conventions for variables, classes, and methods. Reduce duplicated code.
  */
-public class Trio<T> {}
+public class Trio<T> {
+    /**
+     *  A Trio is a class representing a data structure that holds a group of three items. A Trio object has the following
+     *  characteristics:
+     *
+     *     Trios hold three items of the same type.
+     *         For example, a Trio could hold three Integers or it could hold three Strings or it could hold three Students,
+     *         etc. A Trio could not, however, hold two Integers and a String.
+     *     A Trio can contain duplicates.
+     *     A Trio's items are unordered.
+     *     The order doesn't matter. (This is like a set in mathematics. A Trio is different from a set, however, because a
+     *      Trio can contain duplicates.)
+     *         For example, the Trio (3, 4, 5) is considered the same as the Trio (4, 5, 3) and the Trio ("hi", "bye",
+     *          "hello") is considered the same as the Trio ("hello", "hi", "bye").
+     */
+    private T item1, item2, item3;
+
+    public Trio(T item1, T item2, T item3) {
+        this.item1 = item1;
+        this.item2 = item2;
+        this.item3 = item3;
+    }
+
+    public Trio(T item) {
+        this.Trio(item, item, item);
+    }
+
+    public T getItem1() {
+        return item1;
+    }
+
+    public T getItem2() {
+        return item2;
+    }
+
+    public T getItem3() {
+        return item3;
+    }
+
+    public void setItem1(T item1) {
+        this.item1 = item1;
+    }
+
+    public void setItem2(T item2) {
+        this.item2 = item2;
+    }
+
+    public void setItem3(T item3) {
+        this.item3 = item3;
+    }
+
+    @Override
+    public String toString() {
+        return item1.toString() + "\t" + item2.toString() + "\t" + item3.toString();
+    }
+
+
+}
