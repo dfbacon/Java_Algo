@@ -53,5 +53,10 @@ public class ParcelTester {
             System.out.println("Yes.");
         else
             System.out.println("No.");
+
+
+        // Testing OvernightParcel
+        OvernightParcel oParcel = new OvernightParcel("dc4x1m43m2", -0.277, true);
+        System.out.println(oParcel.toString());
     }
 }
