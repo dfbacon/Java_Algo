@@ -1,3 +1,5 @@
+import java.util.*;
+
 /**
  * Describes a Trio data structure that holds a group of three items.
  */
@@ -41,34 +43,42 @@ public class Trio<T> {
         this.item3 = item3;
     }
 
+
+
     @Override
     public String toString() {
-        return item1.toString() + "\t" + item2.toString() + "\t" +
+        return item1.toString() + ", " + item2.toString() + ", " +
                 item3.toString();
     }
 
 
-    // (20 points) an equals method that overrides the equals method of the Object class.
-    //    The method returns true if the current Trio holds the same (logically equivalent) three items in any order as the
-    //    Trio sent as a parameter and false otherwise.
-    //    The equals method should not alter either the current Trio object or the Trio object passed in as a parameter.
+
     @Override
     public boolean equals(Object other) {
         if (other instanceof Trio<?>) {
+
             Trio<?> otherTrio = (Trio<?>) other;
 
-            boolean sameItem1 = item1.equals(otherTrio.item1) ||
-                    item1.equals(otherTrio.item2) || item1.equals(otherTrio.item3);
-            boolean sameItem2 = item2.equals(otherTrio.item1) ||
-                    item2.equals(otherTrio.item2) || item2.equals(otherTrio.item3);
-            boolean sameItem3 = item3.equals(otherTrio.item1) ||
-                    item3.equals(otherTrio.item2) || item3.equals(otherTrio.item3);
+            ArrayList<T> itemsCheckList = new ArrayList<>();
+            itemsCheckList.add(item1);
+            itemsCheckList.add(item2);
+            itemsCheckList.add(item3);
 
-            return sameItem1 && sameItem2 && sameItem3;
+            if (itemsCheckList.contains(otherTrio.item1))
+                itemsCheckList.remove(otherTrio.item1);
+
+            if (itemsCheckList.contains(otherTrio.item2))
+                itemsCheckList.remove(otherTrio.item2);
+
+            if (itemsCheckList.contains(otherTrio.item3))
+                itemsCheckList.remove(otherTrio.item3);
+
+            return itemsCheckList.isEmpty();
         }
 
         return false;
     }
+
 
 
     public void reset(T item) {
@@ -77,14 +87,17 @@ public class Trio<T> {
         this.setItem3(item);
     }
 
-    //(15 points) a method called count that returns a count of how many times an item is in the Trio
+
+
     public int count(T item) {
         int itemCount = 0;
 
         if (item1.equals(item))
             itemCount++;
+
         if (item2.equals(item))
             itemCount++;
+
         if (item3.equals(item))
             itemCount++;
 
@@ -93,17 +106,7 @@ public class Trio<T> {
 
 
 
-    // (15 points) a method called hasDuplicates that returns true if the at least two items within the Trio are the same as
-    //    each other.
-    //        Note this does not determine duplicates based on whether any of the items are aliases, but whether any of the
-    //            items are equal- logically equivalent to each other.
     public boolean hasDuplicates() {
-        if (item1.equals(item2) || item1.equals(item3) || item2.equals(item3))
-            return true;
-        else
-            return false;
+        return item1.equals(item2) || item1.equals(item3) || item2.equals(item3);
     }
-
-
-
 }
