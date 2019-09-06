@@ -8,7 +8,7 @@ public class TrioTester {
 		/* 
 		 * un-comment the line of code below and it should cause a compiler error because trio1 should only accept Strings
 		 */
-		//numberTrio.setItem2("apple");
+//		numberTrio.setItem2("apple");
 		
 		System.out.println("***TESTING TOSTRING METHOD***");
 		System.out.println("Should print a text representation of the Trio that contains 3, 4, 5:");

@@ -3,8 +3,6 @@
  */
 public class Trio<T> {
 
-    static final int MAX_NUMBER_ITEMS = 3;
-
     private T item1, item2, item3;
 
 
@@ -80,13 +78,17 @@ public class Trio<T> {
     }
 
     //(15 points) a method called count that returns a count of how many times an item is in the Trio
-    public int count() {
-        if (item1.equals(item2) && item1.equals(item3))
-            return MAX_NUMBER_ITEMS;
-        else if (this.hasDuplicates())
-            return MAX_NUMBER_ITEMS - 1;
-        else
-            return 1;
+    public int count(T item) {
+        int itemCount = 0;
+
+        if (item1.equals(item))
+            itemCount++;
+        if (item2.equals(item))
+            itemCount++;
+        if (item3.equals(item))
+            itemCount++;
+
+        return itemCount;
     }
 
 
