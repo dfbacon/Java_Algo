@@ -8,7 +8,6 @@ public class Trio<T> {
     private T item1, item2, item3;
 
 
-
     public Trio(T item1, T item2, T item3) {
         this.item1 = item1;
         this.item2 = item2;
@@ -47,14 +46,17 @@ public class Trio<T> {
 
     @Override
     public String toString() {
-        return item1.toString() + ", " + item2.toString() + ", " +
-                item3.toString();
+        return "\t-------=== TRIO ===------- \n{First : " +
+                item1.toString() + ", Second: " +
+                item2.toString() + ", Third: " +
+                item3.toString() + "}\n\t--------------------------";
     }
 
 
 
     @Override
     public boolean equals(Object other) {
+
         if (other instanceof Trio<?>) {
 
             Trio<?> otherTrio = (Trio<?>) other;
