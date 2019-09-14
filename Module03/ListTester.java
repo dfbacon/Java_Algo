@@ -3,6 +3,7 @@ import java.util.*;
 public class ListTester {
     public static void main(String[] args) {
 
+        /*
         List<String> wordList = new ArrayList<>();
 
         wordList.add("ocean");
@@ -19,6 +20,37 @@ public class ListTester {
         System.out.println("-1 : " + lastPosition(null, null));
         System.out.println("-1 : " + lastPosition(null, "sun"));
         System.out.println("-1 : " + lastPosition(wordList, null));
+         */
+
+        List<Integer> integerList = new ArrayList<>(5);
+        List<Integer> listOfOne = new ArrayList<>(1);
+        List<Integer> emptyList = new ArrayList<>();
+
+        listOfOne.add(1);
+
+        integerList.add(2);
+        integerList.add(3);
+        integerList.add(4);
+        integerList.add(1);
+        integerList.add(5);
+
+        System.out.print("Before swap: { ");
+        for (Integer num : integerList) {
+            System.out.print(num + " ");
+        }
+        System.out.println("}");
+
+        prioritizeMinimumValue(integerList);
+        prioritizeMinimumValue(null);
+        prioritizeMinimumValue(listOfOne);
+        prioritizeMinimumValue(emptyList);
+
+
+        System.out.print("After swap: { ");
+        for (Integer num : integerList) {
+            System.out.print(num + " ");
+        }
+        System.out.println("}");
     }
 
 
@@ -71,5 +103,16 @@ public class ListTester {
 
         For full credit, take advantage of the methods provided in List rather than rewriting code yourself.
      */
-    public static void prioritizeMinimumValue(List<Integer> numberList) {}
+    public static void prioritizeMinimumValue(List<Integer> numberList) {
+
+        Integer minValue;
+        int index;
+
+        if (numberList != null && !numberList.isEmpty()) {
+            minValue = Collections.min(numberList);
+            index = numberList.indexOf(minValue);
+            minValue = numberList.remove(index);
+            numberList.add(0, minValue);
+        }
+    }
 }
