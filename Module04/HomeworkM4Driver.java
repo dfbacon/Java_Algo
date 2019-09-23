@@ -58,10 +58,12 @@ public class HomeworkM4Driver {
 			resizableBag.add(1);
 		}
 		System.out.println("The bag contains this many numbers 100: " + resizableBag.getCurrentSize());
+		System.out.println("The size of the bag is: " + resizableBag.bagSize());
 		// NOTE: you need to modify ResizableArrayBag somehow to access and test the length of the array
-		System.out.println("The length of the bag array is 160");
+//		System.out.println("The length of the bag array is 160");
 		resizableBag.trimToSize();
-		System.out.println("The length of the bag array is 100");
+//		System.out.println("The length of the bag array is 100");
+		System.out.println("The size of the bag is: " + resizableBag.bagSize());
 
 //		System.out.println("\n\n******TESTING ALIST REMOVE EVERY");
 //		AList<Integer> numbersList = new AList<>();

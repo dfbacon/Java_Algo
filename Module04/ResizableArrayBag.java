@@ -13,6 +13,7 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
 	private static final int DEFAULT_CAPACITY = 25; // Initial capacity of bag
 	private static final int MAX_CAPACITY = 10000;
 
+
 	/** Creates an empty bag whose initial capacity is 25. */
 	public ResizableArrayBag() 
 	{
@@ -225,7 +226,11 @@ public final class ResizableArrayBag<T> implements BagInterface<T>
    
    
 	public void trimToSize() {
-		// YOUR HOMEWORK CODE HERE
+		bag = Arrays.copyOf(bag, numberOfEntries);
+	}
+
+	public int bagSize() {
+		return bag.length;
 	}
 } // end ResizableArrayBag
 
