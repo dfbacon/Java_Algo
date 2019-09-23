@@ -294,6 +294,7 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>,
     }
 
 
+    @Override
     public int compareTo(AList<T> otherList) {
         if (this.numberOfEntries != otherList.numberOfEntries) {
             return this.numberOfEntries - otherList.numberOfEntries;
