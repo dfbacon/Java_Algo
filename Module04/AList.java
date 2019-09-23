@@ -7,7 +7,7 @@ import java.util.Arrays;
  @author Timothy M. Henry
  @version 5.0
  */
-public class AList<T extends Comparable<? super T>> implements ListInterface<T>
+public class AList<T extends Comparable<? super T>> implements ListInterface<T>, Comparable<AList<T>>
 {
    private T[] list;   // Array of list entries; ignore list[0]
    private int numberOfEntries;
@@ -291,6 +291,21 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>
        }
 
        return isSame;
+    }
+
+
+    public int compareTo(AList<T> otherList) {
+        if (this.numberOfEntries != otherList.numberOfEntries) {
+            return this.numberOfEntries - otherList.numberOfEntries;
+        }
+
+        for (int index = 1; index < numberOfEntries + 1; index++) {
+            if (!this.list[index].equals(otherList.list[index])) {
+                return this.list[index].compareTo(otherList.list[index]);
+            }
+        }
+
+        return 0;
     }
 } // end AList
 
