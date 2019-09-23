@@ -257,10 +257,40 @@ public class AList<T extends Comparable<? super T>> implements ListInterface<T>
 	}
 
 	public int removeEvery(T element) {
-		return 0;
-		// YOUR HOMEWORK CODE HERE
+       int removed = 0;
+
+       for (int index = 1; index < numberOfEntries + 1; index++) {
+           if (element.equals(list[index])) {
+               remove(index);
+
+               removed++;
+               index--;
+           }
+       }
+
+       return removed;
 	}
-   
-   
+
+	@Override
+    public boolean equals(Object obj) {
+       boolean isSame = false;
+
+       if (obj instanceof AList<?>) {
+           AList<?> otherList = (AList<?>) obj;
+
+           if (this.numberOfEntries == otherList.numberOfEntries) {
+               isSame = true;
+
+               for (int index = 1; index < numberOfEntries + 1; index++) {
+                   if (!list[index].equals(otherList.list[index])) {
+                       isSame = false;
+                       break;
+                   }
+               }
+           }
+       }
+
+       return isSame;
+    }
 } // end AList
 
