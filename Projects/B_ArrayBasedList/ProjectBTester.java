@@ -104,38 +104,38 @@ public class ProjectBTester {
 		list.display();
 		System.out.println();
 
-//		// test removes from empty
-//		list.clear();
-//		System.out.println("Remove element null: "+list.removeFront());
-//		System.out.println("Remove element null: "+list.removeBack());
-//		System.out.println();
-//
-//		// test removes from singleton
-//		list.clear();
-//		list.addFront(1);
-//		System.out.println("Remove element 1: "+list.removeFront());
-//		System.out.println("Should display:\n0 elements; capacity = 40");
-//		list.display();
-//		System.out.println();
-//		System.out.println();
-//		list.addBack(1);
-//		System.out.println("Remove element 1: "+list.removeFront());
-//		System.out.println("Should display:\n0 elements; capacity = 40");
-//		list.display();
-//		System.out.println();
-//		System.out.println();
-//		list.addFront(1);
-//		System.out.println("Remove element 1: "+list.removeBack());
-//		System.out.println("Should display:\n0 elements; capacity = 40");
-//		list.display();
-//		System.out.println();
-//		System.out.println();
-//		list.addBack(1);
-//		System.out.println("Remove element 1: "+list.removeBack());
-//		System.out.println("Should display:\n0 elements; capacity = 40");
-//		list.display();
-//		System.out.println();
-//		System.out.println();
+		// test removes from empty
+		list.clear();
+		System.out.println("Remove element null: "+list.removeFront());
+		System.out.println("Remove element null: "+list.removeBack());
+		System.out.println();
+
+		// test removes from singleton
+		list.clear();
+		list.addFront(1);
+		System.out.println("Remove element 1: "+list.removeFront());
+		System.out.println("Should display:\n0 elements; capacity = 40");
+		list.display();
+		System.out.println();
+		System.out.println();
+		list.addBack(1);
+		System.out.println("Remove element 1: "+list.removeFront());
+		System.out.println("Should display:\n0 elements; capacity = 40");
+		list.display();
+		System.out.println();
+		System.out.println();
+		list.addFront(1);
+		System.out.println("Remove element 1: "+list.removeBack());
+		System.out.println("Should display:\n0 elements; capacity = 40");
+		list.display();
+		System.out.println();
+		System.out.println();
+		list.addBack(1);
+		System.out.println("Remove element 1: "+list.removeBack());
+		System.out.println("Should display:\n0 elements; capacity = 40");
+		list.display();
+		System.out.println();
+		System.out.println();
 //
 //		System.out.println("\n\n********TESTING MIX OF ADDS AND REMOVES");
 //		list.addFront(3);

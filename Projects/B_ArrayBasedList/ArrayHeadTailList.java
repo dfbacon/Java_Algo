@@ -77,8 +77,15 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         checkIntegrity();
 
         if (!isEmpty()) {
-            foundEntry = listArray[numberOfElements];
-            listArray[numberOfElements] = null;
+            if (numberOfElements == 1) {
+                foundEntry = listArray[0];
+                listArray[0] = null;
+            }
+            else {
+                foundEntry = listArray[numberOfElements];
+                listArray[numberOfElements] = null;
+            }
+
             numberOfElements--;
         }
 
