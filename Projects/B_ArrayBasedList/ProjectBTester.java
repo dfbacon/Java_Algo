@@ -136,42 +136,42 @@ public class ProjectBTester {
 		list.display();
 		System.out.println();
 		System.out.println();
-//
-//		System.out.println("\n\n********TESTING MIX OF ADDS AND REMOVES");
-//		list.addFront(3);
-//		list.addBack(2);
-//		list.addFront(4);
-//		list.addFront(5);
-//		list.addBack(3);
-//		list.addBack(8);
-//		list.addBack(9);
-//		System.out.println("Should display:\n7 elements; capacity = 40	[5, 4, 3, 2, 3, 8, 9]");
-//		list.display();
-//		System.out.println();
-//
-//		list.removeFront();
-//		list.removeBack();
-//		System.out.println("Should display:\n5 elements; capacity = 40	[4, 3, 2, 3, 8]");
-//		list.display();
-//		System.out.println();
-//
-//		System.out.println("********TESTING WITH STRINGS");
-//		HeadTailListInterface<String> wordList = new ArrayHeadTailList<String>(5);
-//		wordList.addFront("job!");
-//		wordList.addFront("Nice");
-//		wordList.addFront("it!");
-//		wordList.addFront("did");
-//		wordList.addFront("You");
-//		System.out.println("Should display:\n5 elements; capacity = 5	[You, did, it!, Nice, job!]");
-//		wordList.display();
-//		System.out.println();
-//		System.out.println("Contains \"Nice\" is true: "+ wordList.contains(new String("Nice")));
-//		System.out.println("Contains \"You\"  is true: "+ wordList.contains(new String("You")));
-//		System.out.println("Contains \"you\"  is false: "+ wordList.contains(new String("you")));
-//		System.out.println();
-//		System.out.println("Index of \"it!\" is 2: "+ wordList.indexOf(new String("it!")));
-//		System.out.println("Last index of \"it!\" is 2: "+ wordList.lastIndexOf(new String("it!")));
-//
+
+		System.out.println("\n\n********TESTING MIX OF ADDS AND REMOVES");
+		list.addFront(3);
+		list.addBack(2);
+		list.addFront(4);
+		list.addFront(5);
+		list.addBack(3);
+		list.addBack(8);
+		list.addBack(9);
+		System.out.println("Should display:\n7 elements; capacity = 40	[5, 4, 3, 2, 3, 8, 9]");
+		list.display();
+		System.out.println();
+
+		list.removeFront();
+		list.removeBack();
+		System.out.println("Should display:\n5 elements; capacity = 40	[4, 3, 2, 3, 8]");
+		list.display();
+		System.out.println();
+
+		System.out.println("********TESTING WITH STRINGS");
+		HeadTailListInterface<String> wordList = new ArrayHeadTailList<String>(5);
+		wordList.addFront("job!");
+		wordList.addFront("Nice");
+		wordList.addFront("it!");
+		wordList.addFront("did");
+		wordList.addFront("You");
+		System.out.println("Should display:\n5 elements; capacity = 5	[You, did, it!, Nice, job!]");
+		wordList.display();
+		System.out.println();
+		System.out.println("Contains \"Nice\" is true: "+ wordList.contains(new String("Nice")));
+		System.out.println("Contains \"You\"  is true: "+ wordList.contains(new String("You")));
+		System.out.println("Contains \"you\"  is false: "+ wordList.contains(new String("you")));
+		System.out.println();
+		System.out.println("Index of \"it!\" is 2: "+ wordList.indexOf(new String("it!")));
+		System.out.println("Last index of \"it!\" is 2: "+ wordList.lastIndexOf(new String("it!")));
+
 			
 	
 	}

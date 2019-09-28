@@ -31,14 +31,15 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     public void addFront(T newEntry) {
         checkIntegrity();
-        ensureCapacity();
 
-        for (int index = numberOfElements; index >= 0; index--) {
+        for (int index = numberOfElements - 1; index >= 0; index--) {
             listArray[index + 1] = listArray[index];
         }
 
         listArray[0] = newEntry;
         numberOfElements++;
+
+        ensureCapacity();
     }
 
 
