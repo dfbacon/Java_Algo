@@ -32,24 +32,24 @@ public class ProjectBTester {
 		System.out.println();
 
 		System.out.println("Empty is false: " + list.isEmpty());
-//
-//		System.out.println("\n\n********TESTING CLEAR");
-//		list.clear();
-//		System.out.println("Should display:\n0 elements; capacity = 10");
-//		list.display();
-//
-//		System.out.println("\n\n********TESTING ADD TO BACK");
-//		// test addBack to empty
-//		list.addBack(7);
-//		System.out.println("Should display:\n1 elements; capacity = 10	[7]");
-//		list.display();
-//		System.out.println();
-//
-//		// test addBack to non empty
-//		list.addBack(10);
-//		list.addBack(5);
-//		System.out.println("Should display:\n3 elements; capacity = 10	[7, 10, 5]");
-//		list.display();
+
+		System.out.println("\n\n********TESTING CLEAR");
+		list.clear();
+		System.out.println("Should display:\n0 elements; capacity = 10");
+		list.display();
+
+		System.out.println("\n\n********TESTING ADD TO BACK");
+		// test addBack to empty
+		list.addBack(7);
+		System.out.println("Should display:\n1 elements; capacity = 10	[7]");
+		list.display();
+		System.out.println();
+
+		// test addBack to non empty
+		list.addBack(10);
+		list.addBack(5);
+		System.out.println("Should display:\n3 elements; capacity = 10	[7, 10, 5]");
+		list.display();
 //
 //		System.out.println("\n\n********TESTING CONTAINS");
 //		System.out.println("Contains 5 true:  "+list.contains(5));
@@ -64,15 +64,15 @@ public class ProjectBTester {
 //		System.out.println("Should display:\n32 elements; capacity = 40	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]");
 //		list.display();
 //
-//		System.out.println("\n\n********TESTING INDEX OF");
-//		System.out.println("Index of 0  is  0: " + list.indexOf(0));
-//		System.out.println("Index of 31 is 31: " + list.indexOf(31));
-//		System.out.println("Index of -5 is -1: " + list.indexOf(-5));
-//		System.out.println("Index of 32 is -1: " + list.indexOf(32));
-//		list.addFront(3);
-//		list.addBack(5);
-//		System.out.println("Index of 3  is  0: " + list.indexOf(3));
-//		System.out.println("Index of 5  is  6: " + list.indexOf(5));
+		System.out.println("\n\n********TESTING INDEX OF");
+		System.out.println("Index of 0  is  0: " + list.indexOf(0));
+		System.out.println("Index of 31 is 31: " + list.indexOf(31));
+		System.out.println("Index of -5 is -1: " + list.indexOf(-5));
+		System.out.println("Index of 32 is -1: " + list.indexOf(32));
+		list.addFront(3);
+		list.addBack(5);
+		System.out.println("Index of 3  is  0: " + list.indexOf(3));
+		System.out.println("Index of 5  is  6: " + list.indexOf(5));
 //
 //		System.out.println("\n\n********TESTING LAST INDEX OF");
 //		System.out.println("Last index of 0  is  1:  " + list.lastIndexOf(0));

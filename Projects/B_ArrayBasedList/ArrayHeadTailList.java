@@ -17,33 +17,9 @@ import java.util.Arrays;
  *  API descriptions from the interface file and the additional characteristics
  *  listed below.
  *
- * (12 points) addFront(T)
- * when the array is full, expand the array by doubling
- *
- * (12 points) addBack(T)
- * when the array is full, expand the array by doubling
- *
- * (12 points) removeFront()
- * (12 points) removeBack()
  * (7 points) contains (T)
  * (7 points) indexOf(T)
  * (7 points) lastIndexOf(T)
- * (7 points) getEntry(int)
- * review the interface to see what happens with invalid positions
- *
- * (4 points) display()
- * see the tester program for the format of the output- your display must match this format!
- * the output must contain the size, the capacity, and a display of all elements in the list
- *
- * (3 points) clear()
- * (2 points) isEmpty()
- * (2 points) size()
- *
- * (10 points) Style
- * Your class should follow Java coding conventions and best practices.
- * Follow naming conventions for variables, classes, and methods.
- * Reduce duplicated code
- *
  *
  */
 
@@ -69,13 +45,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         integrityOK = true;
     }
 
-    /**
-     * Adds a new entry to the beginning of the list.
-     * Entries currently in the list are shifted down.
-     * The list size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
+
     public void addFront(T newEntry) {
         checkIntegrity();
         ensureCapacity();
@@ -88,30 +58,16 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         numberOfElements++;
     }
 
-    /**
-     * Adds a new entry to the end of the list.
-     * Entries currently in the list are unaffected.
-     * The list size is increased by 1.
-     *
-     * @param newEntry The object to be added as a new entry.
-     */
+
     public void addBack(T newEntry) {
         checkIntegrity();
         ensureCapacity();
 
-        listArray[numberOfElements + 1] = newEntry;
+        listArray[numberOfElements] = newEntry;
         numberOfElements++;
     }
 
 
-
-    /**
-     * Removes an entry from the beginning of the list.
-     * Entries currently in the list are shifted up.
-     * The list size is decreased by 1.
-     *
-     * @return A reference to the removed entry or null if the list is empty.
-     */
     public T removeFront() {
         T foundEntry = null;
 
@@ -131,13 +87,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         return foundEntry;
     }
 
-    /**
-     * Removes an entry from the end of the list.
-     * Entries currently in the list are unaffected.
-     * The list size is decreased by 1.
-     *
-     * @return A reference to the removed entry or null if the list is empty.
-     */
+
     public T removeBack() {
         T foundEntry = null;
 
@@ -153,7 +103,6 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     }
 
 
-    /** Removes all entries from this list. */
     public void clear() {
         checkIntegrity();
 
@@ -165,14 +114,6 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     }
 
 
-    /**
-     * Retrieves the entry at a given position in this list.
-     *
-     * @param givenPosition An integer that indicates the position of the desired
-     *                      entry.
-     * @return A reference to the indicated entry or null if the index is out of
-     * bounds.
-     */
     public T getEntry(int givenPosition) {
         T foundEntry = null;
 
@@ -185,9 +126,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         return foundEntry;
     }
 
-    /**
-     * Displays the contents of the list to the console, in order.
-     */
+
     public void display() {
         checkIntegrity();
 
@@ -211,7 +150,22 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
      * @param anEntry the object to search for in the list.
      * @return the first position the entry that was found or -1 if the object is not found.
      */
-    public int indexOf(T anEntry) {return 0;}
+    public int indexOf(T anEntry) {
+        int foundIndex = -1;
+
+        checkIntegrity();
+
+        if (!isEmpty()) {
+            for (int index = 0; index < numberOfElements - 1; index++) {
+                if (getEntry(index).equals(anEntry)) {
+                    foundIndex = index;
+                    index = numberOfElements;
+                }
+            }
+        }
+
+        return foundIndex;
+    }
 
     /**
      * Determines the position in the list of a given entry.
@@ -231,20 +185,11 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     public boolean contains(T anEntry) {return false;}
 
 
-    /**
-     * Gets the length of this list.
-     *
-     * @return The integer number of entries currently in the list.
-     */
     public int size() {
         return numberOfElements;
     }
 
-    /**
-     * Checks whether this list is empty.
-     *
-     * @return True if the list is empty, or false if the list contains one or more elements.
-     */
+
     public boolean isEmpty() {
         return numberOfElements == 0;
     }
