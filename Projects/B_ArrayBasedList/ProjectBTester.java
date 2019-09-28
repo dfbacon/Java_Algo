@@ -50,20 +50,20 @@ public class ProjectBTester {
 		list.addBack(5);
 		System.out.println("Should display:\n3 elements; capacity = 10	[7, 10, 5]");
 		list.display();
-//
-//		System.out.println("\n\n********TESTING CONTAINS");
-//		System.out.println("Contains 5 true:  "+list.contains(5));
-//		System.out.println("Contains 7 true:  "+list.contains(7));
-//		System.out.println("Contains 4 false: "+list.contains(4));
-//
-//		System.out.println("\n\n********TESTING ADD WITH EXPANSION");
-//		list.clear();
-//		for(int i=0; i<32; i++) {
-//			list.addBack(i);
-//		}
-//		System.out.println("Should display:\n32 elements; capacity = 40	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]");
-//		list.display();
-//
+
+		System.out.println("\n\n********TESTING CONTAINS");
+		System.out.println("Contains 5 true:  "+list.contains(5));
+		System.out.println("Contains 7 true:  "+list.contains(7));
+		System.out.println("Contains 4 false: "+list.contains(4));
+
+		System.out.println("\n\n********TESTING ADD WITH EXPANSION");
+		list.clear();
+		for(int i=0; i<32; i++) {
+			list.addBack(i);
+		}
+		System.out.println("Should display:\n32 elements; capacity = 40	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]");
+		list.display();
+
 		System.out.println("\n\n********TESTING INDEX OF");
 		System.out.println("Index of 0  is  0: " + list.indexOf(0));
 		System.out.println("Index of 31 is 31: " + list.indexOf(31));
@@ -73,19 +73,19 @@ public class ProjectBTester {
 		list.addBack(5);
 		System.out.println("Index of 3  is  0: " + list.indexOf(3));
 		System.out.println("Index of 5  is  6: " + list.indexOf(5));
-//
-//		System.out.println("\n\n********TESTING LAST INDEX OF");
-//		System.out.println("Last index of 0  is  1:  " + list.lastIndexOf(0));
-//		System.out.println("Last index of 31 is 32: " + list.lastIndexOf(31));
-//		System.out.println("Last index of -5 is -1: " + list.lastIndexOf(-5));
-//		System.out.println("Last index of 35 is -1: " + list.lastIndexOf(35));
-//		System.out.println("Last index of 3  is  4:  " + list.lastIndexOf(3));
-//		System.out.println("Last index of 5  is 33: " + list.lastIndexOf(5));
-//
-//
-//		System.out.println("\n\n********TESTING SIZE");
-//		System.out.println("Size is 34: " + list.size());
-//		System.out.println();
+
+		System.out.println("\n\n********TESTING LAST INDEX OF");
+		System.out.println("Last index of 0  is  1:  " + list.lastIndexOf(0));
+		System.out.println("Last index of 31 is 32: " + list.lastIndexOf(31));
+		System.out.println("Last index of -5 is -1: " + list.lastIndexOf(-5));
+		System.out.println("Last index of 35 is -1: " + list.lastIndexOf(35));
+		System.out.println("Last index of 3  is  4:  " + list.lastIndexOf(3));
+		System.out.println("Last index of 5  is 33: " + list.lastIndexOf(5));
+
+
+		System.out.println("\n\n********TESTING SIZE");
+		System.out.println("Size is 34: " + list.size());
+		System.out.println();
 //
 //		System.out.println("\n********TESTING GET ENTRY");
 //		System.out.println("Element in position 15 is 14: "+list.getEntry(15));

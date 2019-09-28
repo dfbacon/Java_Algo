@@ -153,10 +153,8 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
     public int indexOf(T anEntry) {
         int foundIndex = -1;
 
-        checkIntegrity();
-
         if (!isEmpty()) {
-            for (int index = 0; index < numberOfElements - 1; index++) {
+            for (int index = 0; index < numberOfElements; index++) {
                 if (getEntry(index).equals(anEntry)) {
                     foundIndex = index;
                     index = numberOfElements;
@@ -174,7 +172,25 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
      * @param anEntry the object to search for in the list.
      * @return the last position the entry that was found or -1 if the object is not found.
      */
-    public int lastIndexOf(T anEntry) {return 0;}
+    public int lastIndexOf(T anEntry) {
+        int foundIndex = -1;
+
+        checkIntegrity();
+        if (!isEmpty()) {
+            for (int forward = 0, backward = numberOfElements;
+                 forward < backward; forward++, backward--) {
+
+                if (listArray[backward].equals(anEntry)) {
+                    foundIndex = backward;
+                    backward = forward;
+                } else if (listArray[forward].equals(anEntry)) {
+                    foundIndex = forward;
+                }
+            }
+        }
+
+        return foundIndex;
+    }
 
     /**
      * Determines whether an entry is in the list.
@@ -182,7 +198,14 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
      * @param anEntry the object to search for in the list.
      * @return true if the list contains the entry, false otherwise
      */
-    public boolean contains(T anEntry) {return false;}
+    public boolean contains(T anEntry) {
+        if (indexOf(anEntry) == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 
 
     public int size() {
@@ -207,10 +230,11 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
      */
     private void ensureCapacity() {
         int capacity = listArray.length;
+        int newCapacity;
 
         if (numberOfElements >= capacity) {
-            int newCapacity = 2 * capacity;
-            listArray = Arrays.copyOf(listArray, newCapacity + 1);
+            newCapacity = 2 * capacity;
+            listArray = Arrays.copyOf(listArray, newCapacity);
         }
     }
 }
