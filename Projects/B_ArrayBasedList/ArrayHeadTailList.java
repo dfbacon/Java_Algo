@@ -165,24 +165,18 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         return foundIndex;
     }
 
-    /**
-     * Determines the position in the list of a given entry.
-     * If the entry appears more than once, the last index is returned.
-     *
-     * @param anEntry the object to search for in the list.
-     * @return the last position the entry that was found or -1 if the object is not found.
-     */
+    
     public int lastIndexOf(T anEntry) {
         int foundIndex = -1;
 
         checkIntegrity();
         if (!isEmpty()) {
-            for (int forward = 0, backward = numberOfElements;
-                 forward < backward; forward++, backward--) {
+            for (int forward = 0, backward = numberOfElements - 1;
+                 forward <= backward; forward++, backward--) {
 
                 if (listArray[backward].equals(anEntry)) {
                     foundIndex = backward;
-                    backward = forward;
+                    backward = forward - 1;
                 } else if (listArray[forward].equals(anEntry)) {
                     foundIndex = forward;
                 }
