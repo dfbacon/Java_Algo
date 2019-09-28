@@ -86,24 +86,24 @@ public class ProjectBTester {
 		System.out.println("\n\n********TESTING SIZE");
 		System.out.println("Size is 34: " + list.size());
 		System.out.println();
-//
-//		System.out.println("\n********TESTING GET ENTRY");
-//		System.out.println("Element in position 15 is 14: "+list.getEntry(15));
-//		System.out.println("Element in position  0 is  3: "+list.getEntry(0));
-//		System.out.println("Element in position 39 is null: "+list.getEntry(39));
-//		System.out.println("Element in position -1 is null: "+list.getEntry(-1));
-//
-//		System.out.println("\n\n********TESTING REMOVES");
-//		// test removes from nonEmpty
-//		System.out.println("Remove front element 3: "+list.removeFront());
-//		System.out.println("Remove back element  5 :"+list.removeBack());
-//		System.out.println("Remove front element 0: "+list.removeFront());
-//		System.out.println("Remove back element 31: "+list.removeBack());
-//		System.out.println();
-//		System.out.println("Should display:\n30 elements; capacity = 40	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]");
-//		list.display();
-//		System.out.println();
-//
+
+		System.out.println("\n********TESTING GET ENTRY");
+		System.out.println("Element in position 15 is 14: "+list.getEntry(15));
+		System.out.println("Element in position  0 is  3: "+list.getEntry(0));
+		System.out.println("Element in position 39 is null: "+list.getEntry(39));
+		System.out.println("Element in position -1 is null: "+list.getEntry(-1));
+
+		System.out.println("\n\n********TESTING REMOVES");
+		// test removes from nonEmpty
+		System.out.println("Remove front element 3: "+list.removeFront());
+		System.out.println("Remove back element  5 :"+list.removeBack());
+		System.out.println("Remove front element 0: "+list.removeFront());
+		System.out.println("Remove back element 31: "+list.removeBack());
+		System.out.println();
+		System.out.println("Should display:\n30 elements; capacity = 40	[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]");
+		list.display();
+		System.out.println();
+
 //		// test removes from empty
 //		list.clear();
 //		System.out.println("Remove element null: "+list.removeFront());

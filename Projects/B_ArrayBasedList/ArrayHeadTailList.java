@@ -1,26 +1,9 @@
 import java.util.Arrays;
 
 /**
- * You are given an interface for a type of list. The list works like this:
- *  entries can only be added to and removed from the beginning or end of the list
- *  entries can be accessed in any position
- *  entries begin at index 0
+ * A class that describes a list by implementing an array.
  *
- * Write a class that implements this interface. The class uses arrays to implement
- *  the list.
- *
- * You must implement every method from the interface. Make sure to account for
- *  special conditions such as empty lists and singleton lists. Your code should
- *  not crash under these conditions.
- *
- * Your class must compile and have the following implemented methods. Follow the
- *  API descriptions from the interface file and the additional characteristics
- *  listed below.
- *
- * (7 points) contains (T)
- * (7 points) indexOf(T)
- * (7 points) lastIndexOf(T)
- *
+ * @author Daniel Bacon
  */
 
 public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
@@ -74,9 +57,9 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         checkIntegrity();
 
         if (!isEmpty()) {
-            foundEntry = listArray[numberOfElements];
+            foundEntry = listArray[0];
 
-            for (int index = 1; index > numberOfElements; index++) {
+            for (int index = 1; index < numberOfElements; index++) {
                 listArray[index - 1] = listArray[index];
             }
 
@@ -143,13 +126,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         }
     }
 
-    /**
-     * Determines the position in the list of a given entry.
-     * If the entry appears more than once, the first index is returned.
-     *
-     * @param anEntry the object to search for in the list.
-     * @return the first position the entry that was found or -1 if the object is not found.
-     */
+
     public int indexOf(T anEntry) {
         int foundIndex = -1;
 
@@ -165,7 +142,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         return foundIndex;
     }
 
-    
+
     public int lastIndexOf(T anEntry) {
         int foundIndex = -1;
 
@@ -186,12 +163,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
         return foundIndex;
     }
 
-    /**
-     * Determines whether an entry is in the list.
-     *
-     * @param anEntry the object to search for in the list.
-     * @return true if the list contains the entry, false otherwise
-     */
+
     public boolean contains(T anEntry) {
         if (indexOf(anEntry) == -1) {
             return false;
