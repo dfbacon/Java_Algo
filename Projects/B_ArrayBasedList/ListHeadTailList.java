@@ -1,29 +1,146 @@
+import java.util.List;
+import java.util.ArrayList;
+
 /**
- * (10 points) Write a second class to implement HeadTailListInterface. (You
- *  also must complete the first class, above!)
+ * A class that describes a list by implementing an ArrayList.
  *
- * Instead of using an array, use a List object as your instance data variable.
- * Instantiate the List object to type ArrayList.
- *
- * Inside the methods of this class, invoke methods on the List object to
- *  accomplish the task. Note: some methods might look very simple... this
- *  does not mean they are wrong!
- *
- * There is one difference in how this class will work compared to the other:
- *  in this extra credit class, you do not have control over the capacity, so
- *  you should not print the capacity in display and the capacity does not have to be exactly doubled in the two add methods.
- *
- * For full credit:
- *
- * Pay close attention to what should happen in "failed" conditions as described
- *  by the HeadTailListInterface compared to List!
- *
- * Make sure your ListHeadTailList behaves as described in HeadTailListInterface.
- *
- * Use the methods of the List interface/ArrayList class when possible instead of
- *  re-writing the code yourself.
+ * @author Daniel Bacon
  */
 
+
 public class ListHeadTailList<T> implements HeadTailListInterface<T> {
-    List<T> list; // initialize to type ArrayList<T> in the ListHeadTailList constructor
+    List<T> list;
+    private int numberOfElements;
+    private boolean integrityOK;
+
+
+    public ListHeadTailList(int initialCapacity) {
+        integrityOK = false;
+
+        if (initialCapacity < 0) {
+            throw new IllegalStateException("Attempt to create a list " +
+                    "whose capacity is a negative value.");
+        }
+
+        ArrayList<T> tempList = new ArrayList<>(initialCapacity);
+        list = tempList;
+        numberOfElements = 0;
+        integrityOK = true;
+    }
+
+
+    public void addFront(T newEntry) {
+        checkIntegrity();
+
+        list.add(0, newEntry);
+        numberOfElements++;
+    }
+
+
+    public void addBack(T newEntry) {
+        checkIntegrity();
+
+        list.add(newEntry);
+        numberOfElements++;
+    }
+
+
+    public T removeFront() {
+        checkIntegrity();
+
+        try {
+            numberOfElements--;
+            return list.remove(0);
+        }
+        catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+
+
+    public T removeBack() {
+        checkIntegrity();
+
+        try {
+            numberOfElements--;
+            return list.remove(numberOfElements);
+        }
+        catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+
+
+    public void clear() {
+        checkIntegrity();
+
+        list.clear();
+        numberOfElements = 0;
+    }
+
+
+    public T getEntry(int givenPosition) {
+        checkIntegrity();
+
+        try {
+            return list.get(givenPosition);
+        }
+        catch (IndexOutOfBoundsException e) {
+            return null;
+        }
+    }
+
+
+    public void display() {
+        checkIntegrity();
+
+        System.out.print(size() + " elements; capacity N/A" + "\t");
+
+        if (!isEmpty()) {
+            System.out.print("[");
+
+            for (int index = 0; index < numberOfElements - 1; index++) {
+                System.out.print(getEntry(index) + ", ");
+            }
+
+            System.out.println(getEntry(numberOfElements - 1) + "]");
+        }
+    }
+
+
+    public int indexOf(T anEntry) {
+        checkIntegrity();
+        return list.indexOf(anEntry);
+    }
+
+
+    public int lastIndexOf(T anEntry){
+        checkIntegrity();
+        return list.lastIndexOf(anEntry);
+    }
+
+
+    public boolean contains(T anEntry) {
+        checkIntegrity();
+        return list.contains(anEntry);
+    }
+
+
+    public int size() {
+        return numberOfElements;
+    }
+
+
+    public boolean isEmpty() {
+        return list.isEmpty();
+    }
+
+
+    /**
+     * Ensures array exists.
+     */
+    private void checkIntegrity() {
+        if (!integrityOK)
+            throw new SecurityException ("ListHeadTailList object is corrupt.");
+    }
 }
