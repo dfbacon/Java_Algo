@@ -7,7 +7,7 @@ public class ProjectBTester {
 		// comment the line above and un-comment the line below to test the extra credit
 		// NOTE: for the extra credit, all lines should match except for the capacity print out-
 		// the capacity of an ArrayList is private, so this cannot be shown
-//		 HeadTailListInterface<Integer> list = new ListHeadTailList<Integer>(10);
+		// HeadTailListInterface<Integer> list = new ListHeadTailList<Integer>(10);
 		
 		
 		System.out.println("********TESTING ISEMPTY AND EMPTY DISPLAY");
