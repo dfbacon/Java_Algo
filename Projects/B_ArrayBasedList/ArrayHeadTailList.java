@@ -31,6 +31,7 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
     public void addFront(T newEntry) {
         checkIntegrity();
+        ensureCapacity();
 
         for (int index = numberOfElements - 1; index >= 0; index--) {
             listArray[index + 1] = listArray[index];
@@ -38,8 +39,6 @@ public class ArrayHeadTailList<T> implements HeadTailListInterface<T> {
 
         listArray[0] = newEntry;
         numberOfElements++;
-
-        ensureCapacity();
     }
 
 
