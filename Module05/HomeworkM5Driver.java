@@ -4,126 +4,126 @@ public class HomeworkM5Driver {
 
 	public static void main(String[] args) {
 
-		System.out.println("\n******TESTING QUESTION: PRINT AT INTERVAL");
-		Node<Integer> firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12)))));
-		// sets up the chain 3 -> 8 -> 6 -> 12
-		System.out.println("Should print \n3 6");
-		printAtInterval(firstNode, 2); 
-		System.out.println();
-		
-		System.out.println("Should print \n3 12");
-		printAtInterval(firstNode, 3); 
-		System.out.println();
-	
-		firstNode = new Node<Integer>(Integer.valueOf(2), new Node<Integer>(Integer.valueOf(8),	new Node<Integer>(Integer.valueOf(10), new Node<Integer>(Integer.valueOf(4), new Node<Integer>(Integer.valueOf(3))))));
-		// sets up the chain 2 -> 8 -> 10 -> 4 -> 3
-		System.out.println("Should print \n2 10 3");
-		printAtInterval(firstNode, 2);
-		System.out.println();
+//		System.out.println("\n******TESTING QUESTION: PRINT AT INTERVAL");
+//		Node<Integer> firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12)))));
+//		// sets up the chain 3 -> 8 -> 6 -> 12
+//		System.out.println("Should print \n3 6");
+//		printAtInterval(firstNode, 2);
+//		System.out.println();
+//
+//		System.out.println("Should print \n3 12");
+//		printAtInterval(firstNode, 3);
+//		System.out.println();
+//
+//		firstNode = new Node<Integer>(Integer.valueOf(2), new Node<Integer>(Integer.valueOf(8),	new Node<Integer>(Integer.valueOf(10), new Node<Integer>(Integer.valueOf(4), new Node<Integer>(Integer.valueOf(3))))));
+//		// sets up the chain 2 -> 8 -> 10 -> 4 -> 3
+//		System.out.println("Should print \n2 10 3");
+//		printAtInterval(firstNode, 2);
+//		System.out.println();
+//
+//		firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12), new Node<Integer>(Integer.valueOf(2), new Node<Integer>(Integer.valueOf(4), new Node<Integer>(Integer.valueOf(1), new Node<Integer>(Integer.valueOf(5)))))))));
+//		// sets up the chain 3 -> 8 -> 6 -> 12 -> 2 -> 4 -> 1 ->5
+//		System.out.println("Should print \n3 12 1");
+//		printAtInterval(firstNode, 3);
+//		System.out.println();
+//
+//		firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12)))));
+//		// sets up the chain 3 -> 8 -> 6 -> 12
+//		System.out.println("Should print \n3");
+//		printAtInterval(firstNode, 5);
+//		System.out.println();
+//
+//		firstNode = null; // empty chain
+//		System.out.println("Should print nothing (and not crash)");
+//		printAtInterval(firstNode, 5);
+//		System.out.println();
+//
+//		firstNode = new Node<Integer>(Integer.valueOf(3)); // singleton chain
+//		System.out.println("Should print \n3");
+//		printAtInterval(firstNode, 5);
+//		System.out.println();
+//
 
-		firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12), new Node<Integer>(Integer.valueOf(2), new Node<Integer>(Integer.valueOf(4), new Node<Integer>(Integer.valueOf(1), new Node<Integer>(Integer.valueOf(5)))))))));
-		// sets up the chain 3 -> 8 -> 6 -> 12 -> 2 -> 4 -> 1 ->5
-		System.out.println("Should print \n3 12 1");
-		printAtInterval(firstNode, 3); 
-		System.out.println();
-		
-		firstNode = new Node<Integer>(Integer.valueOf(3), new Node<Integer>(Integer.valueOf(8), new Node<Integer>(Integer.valueOf(6), new Node<Integer>(Integer.valueOf(12)))));
-		// sets up the chain 3 -> 8 -> 6 -> 12
-		System.out.println("Should print \n3");
-		printAtInterval(firstNode, 5); 
-		System.out.println();
-	
-		firstNode = null; // empty chain
-		System.out.println("Should print nothing (and not crash)");
-		printAtInterval(firstNode, 5);
-		System.out.println();
+		System.out.println("\n******TESTING QUESTION: LINKED BAG REMOVE ALL");
+		LinkedBag<Integer> numberBag = new LinkedBag<Integer>();
 
-		firstNode = new Node<Integer>(Integer.valueOf(3)); // singleton chain
-		System.out.println("Should print \n3");
-		printAtInterval(firstNode, 5);
-		System.out.println();
-//
-//
-//		System.out.println("\n******TESTING QUESTION: LINKED BAG REMOVE ALL");
-//		LinkedBag<Integer> numberBag = new LinkedBag<Integer>();
-//
-//		// testing on empty bag
-//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-//		numberBag.removeAll(1);
-//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize() +"\n");
-//
-//		// testing on singleton bag
-//		numberBag.add(1);
-//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
-//		numberBag.removeAll(1);
-//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
-//		numberBag.add(1);
-//		numberBag.add(1);
-//		numberBag.add(1);
-//
-//		// testing on bag with all matches
-//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-//		numberBag.removeAll(1);
-//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
-//
-//		// testing on bag with some matches
-//		numberBag.add(1);
-//		numberBag.add(1);
-//		numberBag.add(2);
-//		numberBag.add(4);
-//		numberBag.add(1);
-//		numberBag.add(5);
-//		numberBag.add(1);
-//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
-//		numberBag.removeAll(1);
-//		// NOTE: this code is only here so that the results will be sorted so you can directly compare to what they should be
-//		// don't worry too much about this, it's not part of what we're looking at this week!
-//		//Comparable[] comparableResult = (Comparable[])numberBag.toArray();
-//		Integer[] result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-//		Arrays.sort(result);
-//		System.out.println("After, the bag contains\n[2, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
-//
-//		// testing on bag with some matches
-//		numberBag.clear();
-//		numberBag.add(1);
-//		numberBag.add(1);
-//		numberBag.add(3);
-//		numberBag.add(1);
-//		numberBag.add(1);
-//		numberBag.add(4);
-//		numberBag.add(1);
-//		numberBag.add(5);
-//		numberBag.add(1);
-//		numberBag.add(1);
-//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-//		numberBag.removeAll(1);
-//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-//		Arrays.sort(result);
-//		System.out.println("After, the bag contains\n[3, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
-//
-//		// testing on bag with some matches
-//		System.out.println("Before removing 5, the bag contains " + Arrays.toString(numberBag.toArray()) );
-//		numberBag.removeAll(5);
-//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-//		Arrays.sort(result);
-//		System.out.println("After, the bag contains\n[3, 4] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-//
-//		// testing on bag with some matches
-//		numberBag.add(4);
-//		numberBag.add(5);
-//		System.out.println("Before removing 4, the bag contains " + Arrays.toString(numberBag.toArray()) );
-//		numberBag.removeAll(4);
-//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-//		Arrays.sort(result);
-//		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-//
-//		// testing on bag with no matches
-//		System.out.println("Before removing 7, the bag contains " + Arrays.toString(numberBag.toArray()) );
-//		numberBag.removeAll(7);
-//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-//		Arrays.sort(result);
-//		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-//
+		// testing on empty bag
+		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+		numberBag.removeAll(1);
+		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize() +"\n");
+
+		// testing on singleton bag
+		numberBag.add(1);
+		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
+		numberBag.removeAll(1);
+		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
+		numberBag.add(1);
+		numberBag.add(1);
+		numberBag.add(1);
+
+		// testing on bag with all matches
+		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+		numberBag.removeAll(1);
+		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
+
+		// testing on bag with some matches
+		numberBag.add(1);
+		numberBag.add(1);
+		numberBag.add(2);
+		numberBag.add(4);
+		numberBag.add(1);
+		numberBag.add(5);
+		numberBag.add(1);
+		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
+		numberBag.removeAll(1);
+		// NOTE: this code is only here so that the results will be sorted so you can directly compare to what they should be
+		// don't worry too much about this, it's not part of what we're looking at this week!
+		//Comparable[] comparableResult = (Comparable[])numberBag.toArray();
+		Integer[] result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+		Arrays.sort(result);
+		System.out.println("After, the bag contains\n[2, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
+
+		// testing on bag with some matches
+		numberBag.clear();
+		numberBag.add(1);
+		numberBag.add(1);
+		numberBag.add(3);
+		numberBag.add(1);
+		numberBag.add(1);
+		numberBag.add(4);
+		numberBag.add(1);
+		numberBag.add(5);
+		numberBag.add(1);
+		numberBag.add(1);
+		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+		numberBag.removeAll(1);
+		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+		Arrays.sort(result);
+		System.out.println("After, the bag contains\n[3, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
+
+		// testing on bag with some matches
+		System.out.println("Before removing 5, the bag contains " + Arrays.toString(numberBag.toArray()) );
+		numberBag.removeAll(5);
+		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+		Arrays.sort(result);
+		System.out.println("After, the bag contains\n[3, 4] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
+
+		// testing on bag with some matches
+		numberBag.add(4);
+		numberBag.add(5);
+		System.out.println("Before removing 4, the bag contains " + Arrays.toString(numberBag.toArray()) );
+		numberBag.removeAll(4);
+		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+		Arrays.sort(result);
+		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
+
+		// testing on bag with no matches
+		System.out.println("Before removing 7, the bag contains " + Arrays.toString(numberBag.toArray()) );
+		numberBag.removeAll(7);
+		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+		Arrays.sort(result);
+		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
+
 //
 //		System.out.println("\n******TESTING QUESTION: LLIST GET MAX");
 //		LList<Integer> numbersList = new LList<Integer>();
