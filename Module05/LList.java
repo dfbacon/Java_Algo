@@ -239,12 +239,31 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 		}
 		return lessThanList;
 	}
-	
+
+//	The method returns the largest object in the list.
 	public T getMax() {
-		// YOUR CODE HERE
-		return null;
+		T maxValue;
+		Node currentNodePtr = firstNode;
+
+		try {
+			maxValue = firstNode.data;
+		}
+		catch (NullPointerException e) {
+			return null;
+		}
+
+		while (currentNodePtr != null) {
+			if (currentNodePtr.data.compareTo(maxValue) > 0) {
+				maxValue = currentNodePtr.data;
+			}
+
+			currentNodePtr = currentNodePtr.next;
+		}
+
+		return maxValue;
 	}
-	
+
+
 	public void addAll(T[] items) {
 		// YOUR CODE HERE
 	}

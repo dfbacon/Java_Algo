@@ -43,122 +43,122 @@ public class HomeworkM5Driver {
 //		printAtInterval(firstNode, 5);
 //		System.out.println();
 //
-
-		System.out.println("\n******TESTING QUESTION: LINKED BAG REMOVE ALL");
-		LinkedBag<Integer> numberBag = new LinkedBag<Integer>();
-
-		// testing on empty bag
-		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-		numberBag.removeAll(1);
-		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize() +"\n");
-
-		// testing on singleton bag
-		numberBag.add(1);
-		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
-		numberBag.removeAll(1);
-		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
-		numberBag.add(1);
-		numberBag.add(1);
-		numberBag.add(1);
-
-		// testing on bag with all matches
-		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-		numberBag.removeAll(1);
-		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
-
-		// testing on bag with some matches
-		numberBag.add(1);
-		numberBag.add(1);
-		numberBag.add(2);
-		numberBag.add(4);
-		numberBag.add(1);
-		numberBag.add(5);
-		numberBag.add(1);
-		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
-		numberBag.removeAll(1);
-		// NOTE: this code is only here so that the results will be sorted so you can directly compare to what they should be
-		// don't worry too much about this, it's not part of what we're looking at this week!
-		//Comparable[] comparableResult = (Comparable[])numberBag.toArray();
-		Integer[] result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-		Arrays.sort(result);
-		System.out.println("After, the bag contains\n[2, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
-
-		// testing on bag with some matches
-		numberBag.clear();
-		numberBag.add(1);
-		numberBag.add(1);
-		numberBag.add(3);
-		numberBag.add(1);
-		numberBag.add(1);
-		numberBag.add(4);
-		numberBag.add(1);
-		numberBag.add(5);
-		numberBag.add(1);
-		numberBag.add(1);
-		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
-		numberBag.removeAll(1);
-		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-		Arrays.sort(result);
-		System.out.println("After, the bag contains\n[3, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
-
-		// testing on bag with some matches
-		System.out.println("Before removing 5, the bag contains " + Arrays.toString(numberBag.toArray()) );
-		numberBag.removeAll(5);
-		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-		Arrays.sort(result);
-		System.out.println("After, the bag contains\n[3, 4] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-
-		// testing on bag with some matches
-		numberBag.add(4);
-		numberBag.add(5);
-		System.out.println("Before removing 4, the bag contains " + Arrays.toString(numberBag.toArray()) );
-		numberBag.removeAll(4);
-		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-		Arrays.sort(result);
-		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-
-		// testing on bag with no matches
-		System.out.println("Before removing 7, the bag contains " + Arrays.toString(numberBag.toArray()) );
-		numberBag.removeAll(7);
-		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
-		Arrays.sort(result);
-		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-
 //
-//		System.out.println("\n******TESTING QUESTION: LLIST GET MAX");
-//		LList<Integer> numbersList = new LList<Integer>();
+//		System.out.println("\n******TESTING QUESTION: LINKED BAG REMOVE ALL");
+//		LinkedBag<Integer> numberBag = new LinkedBag<Integer>();
 //
-//		// testing max in the middle
-//		numbersList.add(1);
-//		numbersList.add(2);
-//		numbersList.add(1);
-//		numbersList.add(4);
-//		numbersList.add(3);
-//		System.out.println("The max in the list is 4: " + numbersList.getMax());
+//		// testing on empty bag
+//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+//		numberBag.removeAll(1);
+//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize() +"\n");
 //
-//		// testing duplicate max
-//		numbersList.add(4);
-//		System.out.println("The max in the list is 4: " + numbersList.getMax());
+//		// testing on singleton bag
+//		numberBag.add(1);
+//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
+//		numberBag.removeAll(1);
+//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
+//		numberBag.add(1);
+//		numberBag.add(1);
+//		numberBag.add(1);
 //
-//		// testing max at the end
-//		numbersList.add(5);
-//		System.out.println("The max in the list is 5: " + numbersList.getMax());
+//		// testing on bag with all matches
+//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+//		numberBag.removeAll(1);
+//		System.out.println("After, the bag contains\n[]  \n" + Arrays.toString(numberBag.toArray()) +  "\nSize is 0: " + numberBag.getCurrentSize()+"\n");
 //
-//		// testing max at the beginning
-//		numbersList.add(1, 7);
-//		System.out.println("The max in the list is 7: " + numbersList.getMax());
+//		// testing on bag with some matches
+//		numberBag.add(1);
+//		numberBag.add(1);
+//		numberBag.add(2);
+//		numberBag.add(4);
+//		numberBag.add(1);
+//		numberBag.add(5);
+//		numberBag.add(1);
+//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()) );
+//		numberBag.removeAll(1);
+//		// NOTE: this code is only here so that the results will be sorted so you can directly compare to what they should be
+//		// don't worry too much about this, it's not part of what we're looking at this week!
+//		//Comparable[] comparableResult = (Comparable[])numberBag.toArray();
+//		Integer[] result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+//		Arrays.sort(result);
+//		System.out.println("After, the bag contains\n[2, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
 //
-//		// testing singleton
-//		numbersList.clear();
-//		numbersList.add(1);
-//		System.out.println("The max in the list is 1: " + numbersList.getMax());
+//		// testing on bag with some matches
+//		numberBag.clear();
+//		numberBag.add(1);
+//		numberBag.add(1);
+//		numberBag.add(3);
+//		numberBag.add(1);
+//		numberBag.add(1);
+//		numberBag.add(4);
+//		numberBag.add(1);
+//		numberBag.add(5);
+//		numberBag.add(1);
+//		numberBag.add(1);
+//		System.out.println("Before removing 1, the bag contains " + Arrays.toString(numberBag.toArray()));
+//		numberBag.removeAll(1);
+//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+//		Arrays.sort(result);
+//		System.out.println("After, the bag contains\n[3, 4, 5] \n" + Arrays.toString(result) +  "\nSize is 3: " + numberBag.getCurrentSize()+"\n");
 //
-//		// testing empty list
-//		numbersList.clear();
-//		System.out.println("Should either print null or throw an exception- but NOT a Null Pointer Exception");
-//		System.out.println(numbersList.getMax());
+//		// testing on bag with some matches
+//		System.out.println("Before removing 5, the bag contains " + Arrays.toString(numberBag.toArray()) );
+//		numberBag.removeAll(5);
+//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+//		Arrays.sort(result);
+//		System.out.println("After, the bag contains\n[3, 4] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
 //
+//		// testing on bag with some matches
+//		numberBag.add(4);
+//		numberBag.add(5);
+//		System.out.println("Before removing 4, the bag contains " + Arrays.toString(numberBag.toArray()) );
+//		numberBag.removeAll(4);
+//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+//		Arrays.sort(result);
+//		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
 //
+//		// testing on bag with no matches
+//		System.out.println("Before removing 7, the bag contains " + Arrays.toString(numberBag.toArray()) );
+//		numberBag.removeAll(7);
+//		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
+//		Arrays.sort(result);
+//		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
+
+
+		System.out.println("\n******TESTING QUESTION: LLIST GET MAX");
+		LList<Integer> numbersList = new LList<Integer>();
+
+		// testing max in the middle
+		numbersList.add(1);
+		numbersList.add(2);
+		numbersList.add(1);
+		numbersList.add(4);
+		numbersList.add(3);
+		System.out.println("The max in the list is 4: " + numbersList.getMax());
+
+		// testing duplicate max
+		numbersList.add(4);
+		System.out.println("The max in the list is 4: " + numbersList.getMax());
+
+		// testing max at the end
+		numbersList.add(5);
+		System.out.println("The max in the list is 5: " + numbersList.getMax());
+
+		// testing max at the beginning
+		numbersList.add(1, 7);
+		System.out.println("The max in the list is 7: " + numbersList.getMax());
+
+		// testing singleton
+		numbersList.clear();
+		numbersList.add(1);
+		System.out.println("The max in the list is 1: " + numbersList.getMax());
+
+		// testing empty list
+		numbersList.clear();
+		System.out.println("Should either print null or throw an exception- but NOT a Null Pointer Exception");
+		System.out.println(numbersList.getMax());
+
+
 //
 //		System.out.println("\n******TESTING QUESTION: LLIST ADD ALL");
 //		LList<String> produceList = new LList<String>();
