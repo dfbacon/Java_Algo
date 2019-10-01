@@ -123,56 +123,56 @@ public class HomeworkM5Driver {
 //		result = Arrays.copyOf(((Comparable[])numberBag.toArray()),numberBag.getCurrentSize(), Integer[].class);
 //		Arrays.sort(result);
 //		System.out.println("After, the bag contains\n[3, 5] \n" + Arrays.toString(result) +  "\nSize is 2: " + numberBag.getCurrentSize()+"\n");
-
-
-		System.out.println("\n******TESTING QUESTION: LLIST GET MAX");
-		LList<Integer> numbersList = new LList<Integer>();
-
-		// testing max in the middle
-		numbersList.add(1);
-		numbersList.add(2);
-		numbersList.add(1);
-		numbersList.add(4);
-		numbersList.add(3);
-		System.out.println("The max in the list is 4: " + numbersList.getMax());
-
-		// testing duplicate max
-		numbersList.add(4);
-		System.out.println("The max in the list is 4: " + numbersList.getMax());
-
-		// testing max at the end
-		numbersList.add(5);
-		System.out.println("The max in the list is 5: " + numbersList.getMax());
-
-		// testing max at the beginning
-		numbersList.add(1, 7);
-		System.out.println("The max in the list is 7: " + numbersList.getMax());
-
-		// testing singleton
-		numbersList.clear();
-		numbersList.add(1);
-		System.out.println("The max in the list is 1: " + numbersList.getMax());
-
-		// testing empty list
-		numbersList.clear();
-		System.out.println("Should either print null or throw an exception- but NOT a Null Pointer Exception");
-		System.out.println(numbersList.getMax());
-
-
 //
-//		System.out.println("\n******TESTING QUESTION: LLIST ADD ALL");
-//		LList<String> produceList = new LList<String>();
-//		produceList.addAll(new String[]{"peach"});
-//		System.out.println("The list contains[peach] \n\t\t " + Arrays.toString(produceList.toArray()));
-//		String[] stringArray = { "banana", "date", "grape", "eggplant",	"jicama", "grape" };
-//		produceList.addAll(stringArray);
-//		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
-//						+ Arrays.toString(produceList.toArray()));
-//		System.out.println("Size is 7: " + produceList.getLength());
-//		produceList.addAll(new String[] {});
-//		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
-//				+ Arrays.toString(produceList.toArray()));
-//		System.out.println("Size is 7: " + produceList.getLength());
+//
+//		System.out.println("\n******TESTING QUESTION: LLIST GET MAX");
+//		LList<Integer> numbersList = new LList<Integer>();
+//
+//		// testing max in the middle
+//		numbersList.add(1);
+//		numbersList.add(2);
+//		numbersList.add(1);
+//		numbersList.add(4);
+//		numbersList.add(3);
+//		System.out.println("The max in the list is 4: " + numbersList.getMax());
+//
+//		// testing duplicate max
+//		numbersList.add(4);
+//		System.out.println("The max in the list is 4: " + numbersList.getMax());
+//
+//		// testing max at the end
+//		numbersList.add(5);
+//		System.out.println("The max in the list is 5: " + numbersList.getMax());
+//
+//		// testing max at the beginning
+//		numbersList.add(1, 7);
+//		System.out.println("The max in the list is 7: " + numbersList.getMax());
+//
+//		// testing singleton
+//		numbersList.clear();
+//		numbersList.add(1);
+//		System.out.println("The max in the list is 1: " + numbersList.getMax());
+//
+//		// testing empty list
+//		numbersList.clear();
+//		System.out.println("Should either print null or throw an exception- but NOT a Null Pointer Exception");
+//		System.out.println(numbersList.getMax());
+//
+//
+//
+		System.out.println("\n******TESTING QUESTION: LLIST ADD ALL");
+		LList<String> produceList = new LList<String>();
+		produceList.addAll(new String[]{"peach"});
+		System.out.println("The list contains[peach] \n\t\t " + Arrays.toString(produceList.toArray()));
+		String[] stringArray = { "banana", "date", "grape", "eggplant",	"jicama", "grape" };
+		produceList.addAll(stringArray);
+		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
+						+ Arrays.toString(produceList.toArray()));
+		System.out.println("Size is 7: " + produceList.getLength());
+		produceList.addAll(new String[] {});
+		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
+				+ Arrays.toString(produceList.toArray()));
+		System.out.println("Size is 7: " + produceList.getLength());
 //
 //		System.out.println("\n******TESTING QUESTION EXTRA CREDIT: DOUBLE NODE PALINDROME");
 //		DoubleNode<Integer> n3 = new DoubleNode<Integer>(4);

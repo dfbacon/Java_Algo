@@ -264,8 +264,15 @@ public class LList<T extends Comparable<? super T>> implements ListInterface<T> 
 	}
 
 
+	/*
+		The method adds an array of items to the end of the current list.
+	 */
 	public void addAll(T[] items) {
-		// YOUR CODE HERE
+		if (items.length > 0) {
+			for (int index = 0; index < items.length; index++) {
+				add(items[index]);
+			}
+		}
 	}
 
 
