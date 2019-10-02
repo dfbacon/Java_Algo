@@ -160,77 +160,77 @@ public class HomeworkM5Driver {
 //
 //
 //
-		System.out.println("\n******TESTING QUESTION: LLIST ADD ALL");
-		LList<String> produceList = new LList<String>();
-		produceList.addAll(new String[]{"peach"});
-		System.out.println("The list contains[peach] \n\t\t " + Arrays.toString(produceList.toArray()));
-		String[] stringArray = { "banana", "date", "grape", "eggplant",	"jicama", "grape" };
-		produceList.addAll(stringArray);
-		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
-						+ Arrays.toString(produceList.toArray()));
-		System.out.println("Size is 7: " + produceList.getLength());
-		produceList.addAll(new String[] {});
-		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
-				+ Arrays.toString(produceList.toArray()));
-		System.out.println("Size is 7: " + produceList.getLength());
-//
-//		System.out.println("\n******TESTING QUESTION EXTRA CREDIT: DOUBLE NODE PALINDROME");
-//		DoubleNode<Integer> n3 = new DoubleNode<Integer>(4);
-//		DoubleNode<Integer> n2 = new DoubleNode<Integer>(3);
-//		DoubleNode<Integer> n1 = new DoubleNode<Integer>(4);
-//		n1.next = n2;
-//		n2.next = n3;
-//		n2.previous = n1;
-//		n3.previous = n2;
-//		// sets up the chain 4->3-> 4
-//		System.out.println("Should print true: " + isDoublyLinkedPalindromeList(n1, n3));
-//
-//		DoubleNode<Integer> n4 = new DoubleNode<Integer>(4);
-//		n3 = new DoubleNode<Integer>(3);
-//		n2 = new DoubleNode<Integer>(3);
-//		n1 = new DoubleNode<Integer>(4);
-//		n1.next = n2;
-//		n2.next = n3;
-//		n2.previous = n1;
-//		n3.next = n4;
-//		n3.previous = n2;
-//		n4.previous = n3;
-//		// sets up the chain 4->3->-3->4
-//		System.out.println("Should print true: " + isDoublyLinkedPalindromeList(n1, n4));
-//
-//		n4 = new DoubleNode<Integer>(1);
-//		n3 = new DoubleNode<Integer>(2);
-//		n2 = new DoubleNode<Integer>(3);
-//		n1 = new DoubleNode<Integer>(1);
-//		n1.next = n2;
-//		n2.next = n3;
-//		n2.previous = n1;
-//		n3.next = n4;
-//		n3.previous = n2;
-//		n4.previous = n3;
-//		// sets up the chain 1->3->-2->1
-//		System.out.println("Should print false: " + isDoublyLinkedPalindromeList(n1, n4));
-//
-//		n4 = new DoubleNode<Integer>(4);
-//		n3 = new DoubleNode<Integer>(3);
-//		n2 = new DoubleNode<Integer>(4);
-//		n1 = new DoubleNode<Integer>(3);
-//		n1.next = n2;
-//		n2.next = n3;
-//		n2.previous = n1;
-//		n3.next = n4;
-//		n3.previous = n2;
-//		n4.previous = n3;
-//		// sets up the chain 3->4->-3->4
-//		System.out.println("Should print false: " + isDoublyLinkedPalindromeList(n1, n4));
-//
-//		n1 = new DoubleNode<Integer>(3);
-//		// sets up the chain 3
-//		System.out.println("Should print true and not crash: " + isDoublyLinkedPalindromeList(n1, n1));
-//
-//		n1 = null;
-//		System.out.println("Should print true and not crash: " + isDoublyLinkedPalindromeList(n1, n1));
-//
+//		System.out.println("\n******TESTING QUESTION: LLIST ADD ALL");
+//		LList<String> produceList = new LList<String>();
+//		produceList.addAll(new String[]{"peach"});
+//		System.out.println("The list contains[peach] \n\t\t " + Arrays.toString(produceList.toArray()));
+//		String[] stringArray = { "banana", "date", "grape", "eggplant",	"jicama", "grape" };
+//		produceList.addAll(stringArray);
+//		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
+//						+ Arrays.toString(produceList.toArray()));
+//		System.out.println("Size is 7: " + produceList.getLength());
+//		produceList.addAll(new String[] {});
+//		System.out.println("The list contains[peach, banana, date, grape, eggplant, jicama, grape] \n\t\t "
+//				+ Arrays.toString(produceList.toArray()));
+//		System.out.println("Size is 7: " + produceList.getLength());
+
+		System.out.println("\n******TESTING QUESTION EXTRA CREDIT: DOUBLE NODE PALINDROME");
+		DoubleNode<Integer> n3 = new DoubleNode<Integer>(4);
+		DoubleNode<Integer> n2 = new DoubleNode<Integer>(3);
+		DoubleNode<Integer> n1 = new DoubleNode<Integer>(4);
+		n1.next = n2;
+		n2.next = n3;
+		n2.previous = n1;
+		n3.previous = n2;
+		// sets up the chain 4->3-> 4
+		System.out.println("Should print true: " + isDoublyLinkedPalindromeList(n1, n3));
+
+		DoubleNode<Integer> n4 = new DoubleNode<Integer>(4);
+		n3 = new DoubleNode<Integer>(3);
+		n2 = new DoubleNode<Integer>(3);
+		n1 = new DoubleNode<Integer>(4);
+		n1.next = n2;
+		n2.next = n3;
+		n2.previous = n1;
+		n3.next = n4;
+		n3.previous = n2;
+		n4.previous = n3;
+		// sets up the chain 4->3->-3->4
+		System.out.println("Should print true: " + isDoublyLinkedPalindromeList(n1, n4));
+
+		n4 = new DoubleNode<Integer>(1);
+		n3 = new DoubleNode<Integer>(2);
+		n2 = new DoubleNode<Integer>(3);
+		n1 = new DoubleNode<Integer>(1);
+		n1.next = n2;
+		n2.next = n3;
+		n2.previous = n1;
+		n3.next = n4;
+		n3.previous = n2;
+		n4.previous = n3;
+		// sets up the chain 1->3->-2->1
+		System.out.println("Should print false: " + isDoublyLinkedPalindromeList(n1, n4));
+
+		n4 = new DoubleNode<Integer>(4);
+		n3 = new DoubleNode<Integer>(3);
+		n2 = new DoubleNode<Integer>(4);
+		n1 = new DoubleNode<Integer>(3);
+		n1.next = n2;
+		n2.next = n3;
+		n2.previous = n1;
+		n3.next = n4;
+		n3.previous = n2;
+		n4.previous = n3;
+		// sets up the chain 3->4->-3->4
+		System.out.println("Should print false: " + isDoublyLinkedPalindromeList(n1, n4));
+
+		n1 = new DoubleNode<Integer>(3);
+		// sets up the chain 3
+		System.out.println("Should print true and not crash: " + isDoublyLinkedPalindromeList(n1, n1));
+
+		n1 = null;
+		System.out.println("Should print true and not crash: " + isDoublyLinkedPalindromeList(n1, n1));
+
 	}
 
 	/*
@@ -260,10 +260,29 @@ public class HomeworkM5Driver {
 		}
 	}
 
-	
+	/*
+		Write a method to determine if a doubly-linked list is a "palindrome
+		list"- meaning that the list contains equivalent elements front-to-back
+		and back-to-front.
+	 */
 	public static boolean isDoublyLinkedPalindromeList(DoubleNode<Integer> firstNode, DoubleNode<Integer> lastNode)  {
-		// YOUR EXTRA CREDIT CODE HERE
-		return false;
+		boolean isPalindrome = true;
+
+		if (firstNode != null && lastNode != null) {
+			DoubleNode forwardRunner = firstNode;
+			DoubleNode backwardRunner = lastNode;
+
+			while (forwardRunner.next != backwardRunner.previous) {
+				if (!forwardRunner.data.equals(backwardRunner.data)) {
+					isPalindrome = false;
+				}
+
+				forwardRunner = forwardRunner.next;
+				backwardRunner = backwardRunner.previous;
+			}
+		}
+
+		return isPalindrome;
 	}
 
 }
