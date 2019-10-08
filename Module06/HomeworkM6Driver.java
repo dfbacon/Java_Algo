@@ -82,9 +82,76 @@ public class HomeworkM6Driver {
 		return duplicateList;
 	}
 	
-	
+	/*
+		For this question, write a new method to accomplish the same task in O(n)
+		time.
+
+		Before you begin to write your own code, carefully review the method below.
+		Make sure you understand why that is the order of growth... it's not because
+		of the three loops!
+			You'll notice that the second and third loop will combine to only go
+			through the list one time, so this is O(n) not O(n2). So where does that
+			O(n3) come from?
+
+		Write a new method to create a list of all duplicate integers found on a List.
+			Note that you are not revising or fixing the method below.
+			You are writing a new method.
+			Your method should be linear O(n).
+
+		Details about your method:
+			The numbers in the integer list passed in as a parameter are in the range
+			-5n to 5n, where n is the size of the list.
+
+			Example: if the list is size 10, the numbers in the list are in the range
+			-50 to 50.
+			Example: if the list is size 100, the numbers are in the range -500 to 500
+
+			If a duplicate number shows up more than once on the original list, it
+			should also show up more than once on the duplicate list.
+
+			Example: if the original list contains [1, 1, 1, 2, 2, 3, 4, 5, 5, 5], then
+			the duplicates list should contain [1, 1, 2, 5, 5]
+
+			The order of your duplicates list does not matter. For ease in
+			testing/comparing, the driver program sorts the lists before printing.
+
+		Hints:
+			Remember that you can often improve efficiency by using more space!
+
+			Take advantage of the fact that you know something about the range of
+			the numbers on the list!
+
+			Carefully check the Big-O of any methods you use (e.g., sorting methods,
+			contains methods, remove methods, etc.). If any of those methods are worse
+			than O(n), you should not use them!
+
+			You can review a method's efficiency by reviewing the description on the API
+			page for that class.
+	 */
 	public static List<Integer> findDuplicatesLinear(List<Integer> numbers) {
-		// YOUR CODE HERE
+		ArrayList<Integer> positiveNumbers = new ArrayList<>();
+		ArrayList<Integer> negativeNumbers = new ArrayList<>();
+		ArrayList<Integer> duplicateList = new ArrayList<>();
+
+		// iterate over numbers, add pos. to positive, and neg. to negative
+
+		// follow below strategy for positve, iterating over positiveNumbers
+		// follow below stragegy reversed for negative, iterating over negativeNumbers
+
 		return null;
 	}
+
+	/*
+	public void hasDuplicates(int[] arrA) {
+
+        for (int i = 0; i < arrA.length; i++) {
+            //check if element is negative, if yes the we have found the duplicate
+            if (arrA[Math.abs(arrA[i])] < 0) {
+                System.out.println("Array has duplicates : " + Math.abs(arrA[i]));
+            } else {
+                arrA[Math.abs(arrA[i])] = arrA[Math.abs(arrA[i])] * -1;
+            }
+        }
+    }
+	 */
 }
