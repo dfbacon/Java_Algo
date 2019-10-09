@@ -4,7 +4,7 @@ public class HomeworkM6Driver {
 
 	// I recommend changing these to smaller numbers to start with!
 	// Then once you think you have a good solution, you can increase them for more robust testing.
-	public static final int LIST_SIZE = 100; 
+	public static final int LIST_SIZE = 100;
 	public static final int SINGLE_DUPLICATE_NUMBERS = 10; // minimum number of numbers on the list that will appear twice (have a "single duplicate"
 	public static final int DOUBLE_DUPLICATE_NUMBERS = 5;  // minimum number of numbers on the list that will appear three times (have a "duplicate duplicate")
 	
@@ -129,29 +129,65 @@ public class HomeworkM6Driver {
 			page for that class.
 	 */
 	public static List<Integer> findDuplicatesLinear(List<Integer> numbers) {
-		ArrayList<Integer> positiveNumbers = new ArrayList<>();
-		ArrayList<Integer> negativeNumbers = new ArrayList<>();
-		ArrayList<Integer> duplicateList = new ArrayList<>();
+		List<Integer> duplicateList = new ArrayList<>();
+		final int MAX_SIZE = (5 * numbers.size()) + 1;
 
-		// iterate over numbers, add pos. to positive, and neg. to negative
+		int positiveArray[] = new int[MAX_SIZE];
+		int negativeArray[] = new int[MAX_SIZE];
+		List<Integer> zeroList = new ArrayList<>();
 
-		// follow below strategy for positve, iterating over positiveNumbers
-		// follow below stragegy reversed for negative, iterating over negativeNumbers
+		for (int index = 0; index < numbers.size(); index++) {
+			int targetValue = numbers.get(index);
 
-		return null;
+			if (targetValue == 0) {
+				zeroList.add(0);
+			}
+			else if (targetValue > 0) {
+				if (positiveArray[targetValue] != targetValue) {
+					positiveArray[targetValue] = targetValue;
+				}
+				else {
+					positiveArray[index] = targetValue;
+				}
+			}
+			else {
+				if (negativeArray[Math.abs(targetValue)] != Math.abs(targetValue)) {
+					negativeArray[Math.abs(targetValue)] = Math.abs(targetValue);
+				}
+				else {
+					negativeArray[index] = Math.abs(targetValue);
+				}
+			}
+		}
+
+		if (zeroList.size() > 1) {
+			for (int index = 1; index < zeroList.size(); index++) {
+				duplicateList.add(0);
+			}
+		}
+
+		for (int index = 0; index < positiveArray.length; index++) {
+			int targetValue = Math.abs(positiveArray[index]);
+
+			if (positiveArray[targetValue] < 0) {
+				duplicateList.add(targetValue);
+			}
+			else {
+				positiveArray[targetValue] *= -1;
+			}
+		}
+
+		for (int index = 0; index < negativeArray.length; index++) {
+			int targetValue = Math.abs(negativeArray[index]);
+
+			if (negativeArray[targetValue] < 0) {
+				duplicateList.add(targetValue * -1);
+			}
+			else {
+				negativeArray[targetValue] *= -1;
+			}
+		}
+
+		return duplicateList;
 	}
-
-	/*
-	public void hasDuplicates(int[] arrA) {
-
-        for (int i = 0; i < arrA.length; i++) {
-            //check if element is negative, if yes the we have found the duplicate
-            if (arrA[Math.abs(arrA[i])] < 0) {
-                System.out.println("Array has duplicates : " + Math.abs(arrA[i]));
-            } else {
-                arrA[Math.abs(arrA[i])] = arrA[Math.abs(arrA[i])] * -1;
-            }
-        }
-    }
-	 */
 }
