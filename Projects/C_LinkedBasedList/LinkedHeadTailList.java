@@ -1,4 +1,10 @@
-public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
+/**
+ * A class that describes a list made up of linked nodes.
+ *
+ * @author Daniel Bacon
+ */
+public class LinkedHeadTailList<T extends Comparable<? super T>> implements
+		HeadTailListInterface<T>, Comparable<LinkedHeadTailList<T>> {
 
 	private Node head, tail;
 
@@ -230,6 +236,37 @@ public class LinkedHeadTailList<T> implements HeadTailListInterface<T> {
 		}
 
 		return false;
+	}
+
+
+	/**
+	 * Compares two LinkedHeadTailList objects in the following manner.
+	 * 	- Compare the lists element-by-element.
+	 * 	- The first time you find an element that doesn't match, compare the
+	 * 		lists based on that element.
+	 *	- If you do not find any mismatched elements and reach the end of one
+	 *		or both lists, compare based on size (shorter list is smaller).
+	 *
+	 * @param otherList The other LinkedHeadTailList object.
+	 * @return A negative value if the calling object is less than the other
+	 * 	object, a positive value if the opposite is true, or zero if they are
+	 * 	the same.
+	 */
+	@Override
+	public int compareTo(LinkedHeadTailList<T> otherList) {
+		Node currentNode = this.head;
+		Node otherCurrentNode = otherList.head;
+
+		while (currentNode != null && otherCurrentNode != null) {
+			if (!currentNode.getData().equals(otherCurrentNode.getData())) {
+				return currentNode.getData().compareTo(otherCurrentNode.getData());
+			}
+
+			currentNode = currentNode.getNextNode();
+			otherCurrentNode = otherCurrentNode.getNextNode();
+		}
+
+		return this.size() - otherList.size();
 	}
 
 

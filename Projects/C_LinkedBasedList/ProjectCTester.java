@@ -178,7 +178,7 @@ public class ProjectCTester {
 		System.out.println("Index of \"it!\" is 2: "+ wordList.indexOf(new String("it!")));
 		System.out.println("Last index of \"it!\" is 2: "+ wordList.lastIndexOf(new String("it!")));
 		
-		/*// UNCOMMENT IF COMPLETING THE EXTRA CREDIT
+//		/*// UNCOMMENT IF COMPLETING THE EXTRA CREDIT
 		System.out.println("\n\n********EXTRA CREDIT");
 		LinkedHeadTailList<Integer> listA = new LinkedHeadTailList<Integer>();
 		LinkedHeadTailList<Integer> listB = new LinkedHeadTailList<Integer>();
@@ -228,7 +228,7 @@ public class ProjectCTester {
 		listB.addBack(4);
 		listA.addBack(7);
 		System.out.println("Comparison result: postitive number: "+ listA.compareTo(listB));	
-		*/
+//		*/
 	
 	}
 
