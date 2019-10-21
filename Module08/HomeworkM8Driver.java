@@ -100,7 +100,7 @@ public class HomeworkM8Driver {
 				traceNode = traceNode.getNextNode();
 			}
 		}
-		
+
 		return inversionCount / nodeCounter;
 	}
 	
