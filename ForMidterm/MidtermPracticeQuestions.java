@@ -12,17 +12,52 @@ nameBag.add("fred");
 nameBag.add("carl");
 nameBag.add("harry");
 nameBag.add("hank");
+
+// bag contents [adam, brian, carl, adam, fred, carl, harry, hank]
+
 System.out.println(nameBag.remove("adam"));
+
+// true
+// bag contents [brian, carl, adam, fred, carl, harry, hank]
+
 System.out.println(nameBag.getCurrentSize());
+
+// 7
+
 System.out.println(nameBag.remove("adam"));
+
+// true
+// [brian, carl, fred, carl, harry, hank]
+
 System.out.println(nameBag.remove("adam"));
+
+// false
+
 System.out.println(nameBag.remove("ivan"));
+
+// false
+
 System.out.println(nameBag.getCurrentSize());
+
+// 6
+
 System.out.println(nameBag.getFrequencyOf("carl"));
+
+// 2
+
 System.out.println(nameBag.contains("ivan"));
+
+// 0
+
 System.out.println(nameBag.getFrequencyOf("ivan"));
+
+// 0
+
 nameBag.clear();
 System.out.println(nameBag.getCurrentSize());
+
+// 0
+
      */
 
     /*
@@ -30,24 +65,73 @@ System.out.println(nameBag.getCurrentSize());
 Trace the contents of the list (implements ListInterface) after each statement:
 
 System.out.println(nameList.isEmpty());
+
+// true
+
 nameList.add("adam");
 nameList.add("brian");
 nameList.add("carl");
 nameList.add("edgar");
+
+// list contains: [adam, brian, carl, edgar]
+
 nameList.add(3, "hank");
+
+// list contains: [adam, brian, hank, carl, edgar]
+
 nameList.add("lenny");
 nameList.add(1, "mark");
+
+// list contains: [mark, adam, brian, hank, carl, edgar, lenny]
+
 System.out.println(nameList.getLength());
+
+// 7
+
 System.out.println(nameList.getEntry(3));
+
+// brian
+
 System.out.println(nameList.remove(2));
+
+// adam
+// list contains: [mark, brian, hank, carl, edgar, lenny]
+
 System.out.println(nameList.getEntry(2));
+
+// brian
+
 System.out.println(nameList.remove(1));
+
+// mark
+// list contains: [brian, hank, carl, edgar, lenny]
+
 System.out.println(nameList.remove(2));
+
+// hank
+// list contains: [brian, carl, edgar, lenny]
+
 System.out.println(nameList.getLength());
+
+// 4
+
 System.out.println(nameList.replace(2, "peter"));
+
+// carl
+// list contains: [brian, peter, edgar, lenny]
+
 System.out.println(nameList.getEntry(2));
+
+// peter
+
 System.out.println(nameList.getEntry(1));
+
+// brian
+
 System.out.println(nameList.getLength());
+
+// 4
+
      */
 
     /*
