@@ -75,12 +75,31 @@ public class HomeworkM10FolderDriver {
 	}
 
 	public static void printFolderContentsWithStack(Folder topFolder) {
+
 		Stack<Folder> folderStack = new Stack<Folder>();
+
 		folderStack.push(topFolder);
 
-		while(!folderStack.isEmpty()) {
-			// YOUR CODE HERE!
-			return; // delete this- it's here only so you don't get an infinite loop if you run this without modification			
+		while (!folderStack.isEmpty()) {
+
+			Folder currentFolder = folderStack.pop();
+			List<Folder> folders = currentFolder.getFolderList();
+			List<File> currentFiles = currentFolder.getFileList();
+
+			System.out.println(currentFolder);
+
+			if (!currentFiles.isEmpty()) {
+
+				System.out.println(currentFolder.getFileList());
+			}
+			
+			if (!folders.isEmpty()) {
+
+				for (int index = folders.size(); index > 0; index--) {
+
+					folderStack.push(folders.get(index - 1));
+				}
+			}
 		}
 	}
 
