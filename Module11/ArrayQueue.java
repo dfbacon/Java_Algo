@@ -91,12 +91,23 @@ public final class ArrayQueue<T> implements QueueInterface<T> {
 	
 	public void splice(ArrayQueue<T> anotherQueue) {
 
-		if (!isEmpty() && !anotherQueue.isEmpty()) {
+		if (!anotherQueue.isEmpty()) {
 
-			for (int index = anotherQueue.frontIndex; index < anotherQueue.backIndex + 1; index++) {
+			int firstIndex = anotherQueue.frontIndex;
 
-				enqueue(anotherQueue.queue[index]);
+			while (firstIndex != anotherQueue.backIndex) {
+
+				if (firstIndex == anotherQueue.queue.length) {
+
+					firstIndex = 0;
+				}
+
+				enqueue(anotherQueue.queue[firstIndex]);
+
+				firstIndex++;
 			}
+
+			enqueue(anotherQueue.queue[anotherQueue.backIndex]);
 		}
 	}
 
@@ -116,6 +127,7 @@ public final class ArrayQueue<T> implements QueueInterface<T> {
 	// Doubles the size of the array queue if it is full.
 	// Precondition: checkIntegrity has been called.
 	private void ensureCapacity() {
+
 		if (frontIndex == ((backIndex + 2) % queue.length)) // If array is full,
 		{ // double size of array
 			T[] oldQueue = queue;
