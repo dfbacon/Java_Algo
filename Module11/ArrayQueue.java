@@ -111,6 +111,18 @@ public final class ArrayQueue<T> implements QueueInterface<T> {
 		}
 	}
 
+
+	public T getSecond() {
+		if (!isEmpty() && Math.abs(backIndex - frontIndex) >= 1) {
+
+			return queue[frontIndex + 1];
+		}
+		else {
+
+			throw new EmptyQueueException();
+		}
+	}
+
 	
 	private void checkIntegrity() {
 		if (!integrityOK)
