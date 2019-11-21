@@ -64,11 +64,29 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR CODE HERE! THIS METHOD CANNOT BE RECURSIVE.
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
 	public int countEntriesNonRecursive(T target) {
-		// this initial code is meant as a suggestion to get your started- use it or delete it!
+
 		int count = 0;
+		int comparison;
 		BinaryNode<T> currentNode = getRootNode();
 
-		// consider a loop!
+
+		while (currentNode != null) {
+
+			comparison = target.compareTo(currentNode.getData());
+			if (comparison == 0) {
+
+				count += 1;
+			}
+
+			if (comparison <= 0) {
+
+				currentNode = currentNode.getLeftChild();
+			}
+			else {
+
+				currentNode = currentNode.getRightChild();
+			}
+		}
 		
 		return count;
 	}
