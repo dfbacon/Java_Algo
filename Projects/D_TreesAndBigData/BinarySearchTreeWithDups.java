@@ -75,7 +75,7 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 			comparison = target.compareTo(currentNode.getData());
 			if (comparison == 0) {
 
-				count += 1;
+				count++;
 			}
 
 			if (comparison <= 0) {
@@ -94,12 +94,33 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR CODE HERE! MUST BE RECURSIVE! YOU ARE ALLOWED TO CREATE A PRIVATE HELPER.
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
 	public int countGreaterRecursive(T target) {
-		// this initial code is meant as a suggestion to get your started- use it or delete it!
+
 		int count = 0;
 		BinaryNode<T> rootNode = getRootNode();
+
+		count = countHelper(rootNode, target);
 		
-		// consider a helper method!
-		
+		return count;
+	}
+
+
+	private int countHelper(BinaryNode<T> node, T target) {
+
+		if (node == null) {
+
+			return 0;
+		}
+
+		int comparison = target.compareTo(node.getData());
+		int count = 0;
+
+		if (comparison < 0) {
+
+			count++;
+		}
+
+		count += countHelper(node.getLeftChild(), target) + countHelper(node.getRightChild(), target);
+
 		return count;
 	}
 		
