@@ -3,173 +3,72 @@ import java.util.*;
 public class ListDeque<T> implements DequeInterface<T> {
 
     private List<T> list;
-    private Node firstNode, lastNode;
 
 
     public ListDeque() {
 
-        firstNode = null;
-        lastNode = null;
+        list = new ArrayList<>();
     }
 
 
     public void addToFront(T newEntry) {
 
-        Node newNode = new Node(newEntry, null, null);
-
-        if (isEmpty()) {
-
-            lastNode = newNode;
-        }
-        else {
-
-            newNode.setNextNode(firstNode);
-            firstNode.setPreviousNode(newNode);
-        }
-
-        firstNode = newNode;
+        list.add(0, newEntry);
     }
 
 
     public void addToBack(T newEntry) {
 
-        Node newNode = new Node(newEntry, null, null);
-
-        if (isEmpty()) {
-
-            firstNode = newNode;
-        }
-        else {
-
-            lastNode.setNextNode(newNode);
-            newNode.setPreviousNode(lastNode);
-        }
-
-        lastNode = newNode;
+        list.add(newEntry);
     }
 
 
     public T removeFront() {
 
-        T front = getFront();
+        if (list.isEmpty()) {
 
-        if (front != null) {
-
-            firstNode.setData(null);
-            firstNode = firstNode.getNextNode();
-
-            if (firstNode != null) {
-
-                firstNode.previous.setNextNode(null);
-                firstNode.setPreviousNode(null);
-            } else {
-
-                lastNode = null;
-            }
+            return null;
         }
+        else {
 
-        return front;
+            return list.remove(0);
+        }
     }
 
 
     public T removeBack() {
 
-        T back = getBack();
+        if (list.isEmpty()) {
 
-        if (back != null) {
-
-            lastNode.setData(null);
-            lastNode = lastNode.getPreviousNode();
-
-            if (lastNode != null) {
-
-                lastNode.next.setPreviousNode(null);
-                lastNode.setNextNode(null);
-            } else {
-
-                firstNode = null;
-            }
+            return null;
         }
+        else {
 
-        return back;
+            return list.remove(list.size() - 1);
+        }
     }
 
 
     public T getFront() {
 
-        return isEmpty() ? null : firstNode.getData();
+        return list.get(0);
     }
 
 
     public T getBack() {
 
-        return isEmpty() ? null : lastNode.getData();
+        return list.get(list.size() - 1);
     }
 
 
     public boolean isEmpty() {
 
-        return firstNode == null && lastNode == null;
+        return list.isEmpty();
     }
 
 
     public void clear() {
 
-        firstNode = null;
-        lastNode = null;
-    }
-
-
-    public class Node {
-
-        public T data;
-        public Node next;
-        public Node previous;
-
-
-        private Node(T dataPortion) {
-
-            data = dataPortion;
-            next = null;
-            previous = null;
-        }
-
-
-        private Node(T dataPortion, Node nextLink, Node previousLink) {
-
-            data = dataPortion;
-            next = nextLink;
-            previous = previousLink;
-        }
-
-
-        private T getData() {
-            return data;
-        }
-
-
-        private void setData(T newData) {
-            data = newData;
-        }
-
-
-        private Node getNextNode() {
-            return next;
-        }
-
-
-        private Node getPreviousNode() {
-            return previous;
-        }
-
-
-        private void setNextNode(Node nextNode) {
-            next = nextNode;
-        }
-
-
-        private void setPreviousNode(Node previousNode) {
-            previous = previousNode;
-        }
+        list.clear();
     }
 }
