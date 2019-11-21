@@ -51,13 +51,27 @@ public class ListDeque<T> implements DequeInterface<T> {
 
     public T getFront() {
 
-        return list.get(0);
+        if (list.isEmpty()) {
+
+            return null;
+        }
+        else {
+
+            return list.get(0);
+        }
     }
 
 
     public T getBack() {
 
-        return list.get(list.size() - 1);
+        if (list.isEmpty()) {
+
+            return null;
+        }
+        else {
+
+            return list.get(list.size() - 1);
+        }
     }
 
 
