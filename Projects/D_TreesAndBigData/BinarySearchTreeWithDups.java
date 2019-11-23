@@ -97,7 +97,15 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		int count = 0;
 		BinaryNode<T> rootNode = getRootNode();
 
-		count = countHelper(rootNode, target);
+		if (rootNode != null) {
+
+			while (rootNode.hasRightChild() && target.compareTo(rootNode.getData()) > 0) {
+
+				rootNode = rootNode.getRightChild();
+			}
+
+			count = countHelper(rootNode, target);
+		}
 		
 		return count;
 	}
@@ -130,6 +138,14 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		int count = 0;
 		BinaryNode<T> rootNode = getRootNode();
 		Stack<BinaryNode<T>> nodeStack = new Stack<BinaryNode<T>>();
+
+		if (rootNode != null) {
+
+			while (rootNode.hasRightChild() && target.compareTo(rootNode.getData()) > 0) {
+
+				rootNode = rootNode.getRightChild();
+			}
+		}
 
 		while (rootNode != null || nodeStack.size() > 0) {
 
