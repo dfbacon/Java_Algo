@@ -1,0 +1,18 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx720\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 1.  The tree from the shuffled list (Comparison B) had the fastest processing time. This is because the left and right subtrees are a more equal size so there are less comparisons to make to find the desired data. \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \cb3 \
+2.  The building and processing times for the sorted ascending list are faster than for a sorted descending list because the descending list creates a tree of exclusively left nodes. The ascending list has some minor branching. This means that for the descending BST it takes, at worst, n (being the number of entries) comparisons to find a given entry. This is the worst case time complexity for a binary search tree, O(n).\
+\pard\pardeftab720\sl360\partightenfactor0
+\cf2 \
+3. The tree was faster at processing than the shuffled list. The binary search tree, in this case, is able to approximately halve the number of entries to search for, after each node visited. This is reflected in the best and average cases, O(n) and O(log n) respectively. For the shuffled list, each entry must be visited in order until the correct entry is reached (average case being O(n)) making it a much more inefficient data structure for this exercise.\
+\
+4. The fact that the binary search tree is has a more sorted nature greatly improves its search efficiency. In the best case scenario (assuming you aren\'92t searching for the root) the number of comparisons needed to find the correct entry is halved with each visited node.}

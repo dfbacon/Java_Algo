@@ -26,6 +26,7 @@ public class ProjectDPartADriver {
 		}
 		System.out.println("Inorder should print \n1 3 4 5 5 6 6 6 6 7 8 8 9 10 11");
 		dupTree.recursiveInorderTraverse();
+
 		System.out.println("\nPreorder should print \n6 3 1 6 5 4 5 6 6 10 8 7 8 9 11");
 		dupTree.recursivePreorderTraverse();
 		System.out.println("\nPostorder should print \n1 5 4 6 6 5 6 3 8 7 9 8 11 10 6");
@@ -33,8 +34,8 @@ public class ProjectDPartADriver {
 		System.out.println("\n\nThe left child of the root 6 is  3: " + dupTree.getRootNode().getLeftChild().getData());
 		System.out.println("The left child of the 3 node is  1: " + dupTree.getRootNode().getLeftChild().getLeftChild().getData());
 		System.out.println("The right child of the 3 node is 6: " + dupTree.getRootNode().getLeftChild().getRightChild().getData());
-	
-		
+
+
 		System.out.println("\n\n*****TESTING COUNT ENTRIES");
 		System.out.println("Number of 1s \t1:  " + dupTree.countEntriesNonRecursive(1));
 		System.out.println("Number of 4s \t1:  " + dupTree.countEntriesNonRecursive(4));
@@ -54,7 +55,7 @@ public class ProjectDPartADriver {
 		System.out.println("Numbers greater than 5 \t\t10: " + dupTree.countGreaterWithStack(5));
 		System.out.println("Numbers greater than 6 \t\t6: " + dupTree.countGreaterWithStack(6));
 		System.out.println("Numbers greater than 8 \t\t3: " + dupTree.countGreaterWithStack(8));
-		System.out.println("Numbers greater than 10 \t1: " + dupTree.countGreaterWithStack(10));		
+		System.out.println("Numbers greater than 10 \t1: " + dupTree.countGreaterWithStack(10));
 		System.out.println("Numbers greater than 11 \t0: " + dupTree.countGreaterWithStack(11));
 		System.out.println("Numbers greater than 12 \t0: " + dupTree.countGreaterWithStack(12));
 
@@ -64,7 +65,7 @@ public class ProjectDPartADriver {
 		System.out.println("Numbers greater than 5 \t\t10: " + dupTree.countGreaterRecursive(5));
 		System.out.println("Numbers greater than 6 \t\t6: " + dupTree.countGreaterRecursive(6));
 		System.out.println("Numbers greater than 8 \t\t3: " + dupTree.countGreaterRecursive(8));
-		System.out.println("Numbers greater than 10 \t1: " + dupTree.countGreaterRecursive(10));		
+		System.out.println("Numbers greater than 10 \t1: " + dupTree.countGreaterRecursive(10));
 		System.out.println("Numbers greater than 11 \t0: " + dupTree.countGreaterRecursive(11));
 		System.out.println("Numbers greater than 12 \t0: " + dupTree.countGreaterRecursive(12));
 

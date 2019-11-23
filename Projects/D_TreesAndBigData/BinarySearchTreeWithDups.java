@@ -26,7 +26,7 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR CODE HERE! THIS METHOD CANNOT BE RECURSIVE.
 	private void addEntryHelperNonRecursive(T newEntry) {
 
-		BinaryNode<T> currentNode = getRootNode(); // this might not work...
+		BinaryNode<T> currentNode = getRootNode();
 		int comparison;
 		boolean inserted = false;
 
@@ -69,7 +69,6 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 		int comparison;
 		BinaryNode<T> currentNode = getRootNode();
 
-
 		while (currentNode != null) {
 
 			comparison = target.compareTo(currentNode.getData());
@@ -87,7 +86,7 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 				currentNode = currentNode.getRightChild();
 			}
 		}
-		
+
 		return count;
 	}
 
@@ -127,22 +126,67 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 	// YOUR CODE HERE! MUST USE A STACK!! MUST NOT BE RECURSIVE! 
 	// MAKE SURE TO TAKE ADVANTAGE OF THE SORTED NATURE OF THE BST!
 	public int countGreaterWithStack(T target) {
-		// this initial code is meant as a suggestion to get your started- use it or delete it!
+
 		int count = 0;
 		BinaryNode<T> rootNode = getRootNode();
 		Stack<BinaryNode<T>> nodeStack = new Stack<BinaryNode<T>>();
-		nodeStack.push(rootNode);
 
-		// consider a loop based on the stack!
+		while (rootNode != null || nodeStack.size() > 0) {
+
+			while (rootNode != null) {
+
+				nodeStack.push(rootNode);
+				rootNode = rootNode.getLeftChild();
+			}
+
+			rootNode = nodeStack.pop();
+
+			if (target.compareTo(rootNode.getData()) < 0) {
+
+				count++;
+			}
+
+			rootNode = rootNode.getRightChild();
+		}
+
 		return count;
 	}
 		
 	// YOUR EXTRA CREDIT CODE HERE! THIS METHOD MUST BE O(n). 
 	// YOU ARE ALLOWED TO USE A HELPER METHOD. THE METHOD CAN BE ITERATIVE OR RECURSIVE. 
 	public int countUniqueValues() {
-		return 0;
+
+		BinaryNode<T> rootNode = getRootNode();
+		int count = 0;
+
+		if (rootNode != null) {
+
+			List<T> uniqueValueList = new ArrayList<>();
+			count = countUniqueHelper(rootNode, uniqueValueList);
+		}
+
+		return count;
 	}
-	
+
+	private int countUniqueHelper(BinaryNode<T> node, List<T> uniqueValues) {
+
+		if (node == null) {
+
+			return 0;
+		}
+
+		if (!uniqueValues.contains(node.getData())) {
+
+			uniqueValues.add(node.getData());
+		}
+
+		countUniqueHelper(node.getLeftChild(), uniqueValues);
+		countUniqueHelper(node.getRightChild(), uniqueValues);
+
+		return uniqueValues.size();
+	}
+
+
 	
 	
 	public int getLeftHeight() {
@@ -166,7 +210,4 @@ public class BinarySearchTreeWithDups<T extends Comparable<? super T>> extends B
 			return rootNode.getRightChild().getHeight();
 		}
 	}
-	
-
-
 }
