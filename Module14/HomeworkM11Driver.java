@@ -64,7 +64,7 @@ public class HomeworkM11Driver {
 				System.out.println(v.getName() + "\tLocation " + voterTable.getHashTableLocation(v.getId()));
 			}
 
-			// UNCOMMENT IF COMPLETING THE EXTRA CREDIT
+//			 UNCOMMENT IF COMPLETING THE EXTRA CREDIT
 			System.out.println("\n*****TESTING EXTRA CREDIT- NO ADDING DUPLICATES");
 			System.out.println("These voters are duplicates and should not be added- each should print false.");
 			System.out.println("Delta Dem added again?\t\t\tfalse: " + voterTable.addVoter(v1));

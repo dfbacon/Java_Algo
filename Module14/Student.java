@@ -31,14 +31,29 @@ public class Student {
 
 	@Override
 	public boolean equals(Object obj) {
-		// YOUR CODE HERE
-		return false;
+
+		if (this == obj) {
+
+			return true;
+		}
+
+		if (obj == null) {
+
+			return false;
+		}
+
+		Student student = (Student) obj;
+
+		return id == student.id
+				&& paidFees == student.paidFees
+				&& (firstName.equals(student.firstName)
+				&&(lastName.equals(student.lastName)));
 	}
 	
 	@Override
 	public int hashCode() {
-		// YOUR CODE HERE
-		return 0;
+
+		return Objects.hash(id, firstName, lastName, paidFees);
 	}
 
 

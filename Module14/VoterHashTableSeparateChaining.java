@@ -9,20 +9,80 @@ public class VoterHashTableSeparateChaining {
 		hashTable = (Node<Voter>[]) new Node[size];
 		tableSize = size;
 	}
-	
+
 	public int getHashTableLocation(int voterID) {
-		// YOUR CODE HERE
-		return 0;
+
+		return voterID % tableSize;
 	}
 
+	// Extra credit implemented
 	public boolean addVoter(Voter voterToAdd) {
-		// YOUR CODE HERE
-		return false;
+
+		boolean voterAdded = false;
+
+		if (voterToAdd != null) {
+
+			Node<Voter> newVoter = new Node<>(voterToAdd);
+			int index = getHashTableLocation(voterToAdd.getId());
+
+			if (hashTable[index] == null) {
+
+				hashTable[index] = newVoter;
+				voterAdded = true;
+
+			} else {
+
+				Node<Voter> currentEntry = hashTable[index];
+
+				while (currentEntry.getNextNode() != null) {
+
+					if (equalVotingObject(currentEntry.getData(), voterToAdd)) {
+
+						return voterAdded;
+					}
+
+					currentEntry = currentEntry.getNextNode();
+				}
+
+				if (!equalVotingObject(currentEntry.getData(), voterToAdd)) {
+
+					currentEntry.setNextNode(newVoter);
+					voterAdded = true;
+				}
+			}
+		}
+
+		return voterAdded;
 	}
 
 	public Voter getVoter(int voterID) {
-		// YOUR CODE HERE
-		return null;
+
+		Voter voterFound = null;
+		int index = getHashTableLocation(voterID);
+
+		if (hashTable[index] != null) {
+
+			Node<Voter> currentEntry = hashTable[index];
+
+			while (currentEntry != null) {
+
+				if (currentEntry.getData().getId() == voterID) {
+
+					voterFound = currentEntry.getData();
+					break;
+				}
+
+				currentEntry = currentEntry.getNextNode();
+			}
+		}
+
+		return voterFound;
+	}
+
+	private boolean equalVotingObject(Voter firstVoter, Voter secondVoter) {
+
+		return firstVoter.getId() == secondVoter.getId()
+				&& firstVoter.getName().equals(secondVoter.getName());
 	}
 
 	public void printTable() {
