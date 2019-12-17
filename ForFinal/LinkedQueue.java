@@ -50,8 +50,27 @@ public final class LinkedQueue<T> implements QueueInterface<T> {
 	} 
 
 	public boolean hasConsecutiveDuplicates() {
-		// YOUR CODE HERE
-		return false;
+
+		if (isEmpty() || firstNode == lastNode) {
+
+			return false;
+
+		} else {
+
+			Node currentNode = firstNode;
+
+			while (currentNode.next != null) {
+
+				if (currentNode.data.equals(currentNode.next.data)) {
+
+					return true;
+				}
+
+				currentNode = currentNode.next;
+			}
+
+			return false;
+		}
 	}
 
 	
